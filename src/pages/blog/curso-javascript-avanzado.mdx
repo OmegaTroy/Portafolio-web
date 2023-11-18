@@ -1,0 +1,1276 @@
+---
+title: "Curso de JavaScript avanzado"
+descripcion: "este es el nivel avanzado de javaScript en el vemos eventos ,callbacks ,manejo de errores. etc"
+prev: "/blog/curso-javascript-basico"
+url: "/blog/curso-javascript-avanzado"
+color: "#ff6493"
+tag: [curso, JavaScript]
+layout: ../../layouts/LayoutCursos.astro
+data: "04 de Noviembre de 2023"
+---
+
+# Curso de JavaScript avanzado
+
+---
+
+<img src="/js-1.avif" />
+
+## Objeto window en JavaScript
+
+El objeto window representa la ventana del navegador en JavaScript. Proporciona acceso a funciones y propiedades relacionadas con la ventana, navegación, y el entorno del navegador.
+
+## Propiedades y Métodos Comunes del Objeto window
+
+### window.alert()
+
+El método alert() muestra un cuadro de diálogo de alerta con el mensaje proporcionado.
+
+```jsx
+window.alert("¡Hola, mundo!");
+```
+
+### window.prompt()
+
+El método prompt() muestra un cuadro de diálogo con un mensaje y permite al usuario ingresar datos.
+
+```jsx
+const nombre = window.prompt("Ingresa tu nombre:");
+console.log("Hola,", nombre);
+```
+
+### window.confirm()
+
+El método confirm() muestra un cuadro de diálogo de confirmación con un mensaje y opciones "Aceptar" y "Cancelar".
+
+```jsx
+const confirmado = window.confirm("¿Estás seguro?");
+if (confirmado) {
+  console.log("Usuario confirmó.");
+} else {
+  console.log("Usuario canceló.");
+}
+```
+
+### window.location
+
+La propiedad location proporciona información sobre la URL actual y permite redireccionar la página.
+
+```jsx
+console.log("URL actual:", window.location.href);
+window.location.href = "https://www.ejemplo.com";
+```
+
+### window.open()
+
+El método open() abre una nueva ventana del navegador o pestaña con la URL proporcionada.
+
+```jsx
+window.open("https://www.ejemplo.com");
+```
+
+### window.close()
+
+El método close() cierra la ventana actual.
+
+```jsx
+window.close();
+```
+
+### print()
+
+La función print() permite imprimir el contenido de la página actual. Al invocar esta función, se abre la ventana de impresión del navegador que permite al usuario imprimir el contenido visible en la pantalla.
+
+```jsx
+function imprimirPagina() {
+  window.print();
+}
+```
+
+### screen
+
+El objeto global screen proporciona información sobre la pantalla del dispositivo. Puedes acceder a propiedades como screen.width y screen.height para obtener el ancho y alto de la pantalla, respectivamente.
+
+```jsx
+const anchoPantalla = screen.width;
+const altoPantalla = screen.height;
+console.log(`Ancho de la pantalla: ${anchoPantalla}px`);
+console.log(`Alto de la pantalla: ${altoPantalla}px`);
+```
+
+### scroll()
+
+Aunque no existe una función scroll() en JavaScript, puedes usar window.scrollTo(x, y) para controlar el desplazamiento de la página. Esto desplazará la vista a las coordenadas (x, y) en la página.
+
+```jsx
+function desplazarAPosicion() {
+  window.scrollTo(0, 500); // Desplaza a la posición vertical 500px
+}
+```
+
+### closed
+
+La propiedad closed se utiliza para verificar si una ventana emergente (popup) creada con window.open() ha sido cerrada. Devuelve true si la ventana se ha cerrado.
+
+```jsx
+const miVentana = window.open("https://www.ejemplo.com", "_blank");
+setTimeout(() => {
+  if (miVentana.closed) {
+    console.log("La ventana ha sido cerrada.");
+  } else {
+    console.log("La ventana está abierta.");
+  }
+}, 5000); // Verificar después de 5 segundos
+```
+
+### stop()
+
+El método stop() detiene la carga de una página web. Puede utilizarse para detener la carga de una página que aún se está descargando.
+
+```jsx
+function detenerCarga() {
+  window.stop();
+}
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objeto window en JavaScript</title>
+  </head>
+  <body>
+    <button id="mostrar-alerta">Mostrar Alerta</button>
+    <button id="mostrar-prompt">Mostrar Prompt</button>
+    <button id="mostrar-confirm">Mostrar Confirm</button>
+    <button id="redireccionar">Redireccionar</button>
+    <button id="abrir-ventana">Abrir Ventana</button>
+
+    <script>
+      document
+        .getElementById("mostrar-alerta")
+        .addEventListener("click", function () {
+          window.alert("¡Hola, mundo!");
+        });
+
+      document
+        .getElementById("mostrar-prompt")
+        .addEventListener("click", function () {
+          const nombre = window.prompt("Ingresa tu nombre:");
+          console.log("Hola,", nombre);
+        });
+
+      document
+        .getElementById("mostrar-confirm")
+        .addEventListener("click", function () {
+          const confirmado = window.confirm("¿Estás seguro?");
+          if (confirmado) {
+            console.log("Usuario confirmó.");
+          } else {
+            console.log("Usuario canceló.");
+          }
+        });
+
+      document
+        .getElementById("redireccionar")
+        .addEventListener("click", function () {
+          window.location.href = "https://www.ejemplo.com";
+        });
+
+      document
+        .getElementById("abrir-ventana")
+        .addEventListener("click", function () {
+          window.open("https://www.ejemplo.com");
+        });
+    </script>
+  </body>
+</html>
+```
+
+## Handlers, Listeners y Objeto Event en JavaScript
+
+Los handlers y listeners son conceptos clave en la programación web, utilizados para gestionar interacciones del usuario con elementos del DOM. El objeto Event proporciona información sobre los eventos que ocurren en el navegador.
+
+### Handlers
+
+Los handlers son funciones que se ejecutan en respuesta a un evento específico. Pueden ser atributos HTML (onclick, onmouseover, etc.) o asignados en el código JavaScript.
+
+```html
+<button id="mi-boton" onclick="mostrarMensaje()">Haz clic</button>
+```
+
+### Listeners
+
+Los listeners son métodos que se utilizan para agregar y gestionar eventos de manera más flexible que los handlers. Puedes utilizar addEventListener() para vincular un evento a un elemento y ejecutar una función cuando ocurra el evento.
+
+```jsx
+const miBoton = document.getElementById("mi-boton");
+
+miBoton.addEventListener("click", function () {
+  mostrarMensaje();
+});
+```
+
+### Objeto Event
+
+El objeto Event contiene información sobre el evento que ocurrió. Proporciona detalles como el tipo de evento, el objetivo del evento y más.
+
+```jsx
+function mostrarMensaje(event) {
+  console.log("Tipo de evento:", event.type);
+  console.log("Objetivo del evento:", event.target);
+}
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Handlers, Listeners y Objeto Event en JavaScript</title>
+  </head>
+  <body>
+    <button id="mi-boton">Haz clic</button>
+
+    <script>
+      const miBoton = document.getElementById("mi-boton");
+
+      // Handler utilizando atributo HTML
+      function mostrarMensaje() {
+        alert("Haz clic en el botón");
+      }
+
+      // Listener utilizando addEventListener
+      miBoton.addEventListener("click", function () {
+        alert("Haz clic en el botón mediante listener");
+      });
+
+      // Listener con uso del objeto Event
+      miBoton.addEventListener("mouseover", function (event) {
+        console.log("Pasaste el mouse sobre el botón");
+        console.log("Tipo de evento:", event.type);
+        console.log("Objetivo del evento:", event.target);
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Event Flow (Flujo de Eventos) en JavaScript: Bubbling y Capturing
+
+El flujo de eventos describe el orden en que se procesan los eventos en los elementos del DOM. En JavaScript, existen dos enfoques principales en el flujo de eventos: burbujeo (bubbling) y captura (capturing).
+
+## Bubbling (Burbujeo)
+
+El bubbling es el proceso por el cual un evento se propaga desde el elemento objetivo hacia el elemento raíz del documento. Comienza desde el elemento más interno y se propaga hacia los elementos padres en orden ascendente.
+
+```jsx
+<div id="padre">
+  <button id="hijo">Botón</button>
+</div>
+
+<script>
+  const padre = document.getElementById("padre");
+  const hijo = document.getElementById("hijo");
+
+  padre.addEventListener("click", function() {
+    console.log("Evento en el padre (bubbling)");
+  });
+
+  hijo.addEventListener("click", function() {
+    console.log("Evento en el hijo (bubbling)");
+  });
+</script>
+```
+
+## Capturing (Captura)
+
+El capturing es el proceso inverso del bubbling. Un evento se propaga desde el elemento raíz hacia el elemento objetivo. Comienza desde el elemento raíz y desciende hacia los elementos hijos.
+
+```jsx
+<div id="padre">
+  <button id="hijo">Botón</button>
+</div>
+
+<script>
+  const padre = document.getElementById("padre");
+  const hijo = document.getElementById("hijo");
+
+  padre.addEventListener("click", function() {
+    console.log("Evento en el padre (capturing)");
+  }, true); // El tercer parámetro indica captura
+
+  hijo.addEventListener("click", function() {
+    console.log("Evento en el hijo (capturing)");
+  }, true); // El tercer parámetro indica captura
+</script>
+```
+
+## Detener el Flujo de Eventos
+
+Puedes detener el flujo de eventos utilizando el método stopPropagation()en el objeto Event.
+
+```jsx
+<div id="padre">
+  <button id="hijo">Botón</button>
+</div>
+
+<script>
+  const padre = document.getElementById("padre");
+  const hijo = document.getElementById("hijo");
+
+  padre.addEventListener("click", function(event) {
+    console.log("Evento en el padre (bubbling)");
+    event.stopPropagation(); // Detener el bubbling
+  });
+
+  hijo.addEventListener("click", function(event) {
+    console.log("Evento en el hijo (bubbling)");
+    event.stopPropagation(); // Detener el bubbling
+  });
+</script>
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Flow: Bubbling y Capturing en JavaScript</title>
+  </head>
+  <body>
+    <div id="padre">
+      <button id="hijo">Botón</button>
+    </div>
+
+    <script>
+      const padre = document.getElementById("padre");
+      const hijo = document.getElementById("hijo");
+
+      padre.addEventListener("click", function () {
+        console.log("Evento en el padre (bubbling)");
+      });
+
+      hijo.addEventListener("click", function () {
+        console.log("Evento en el hijo (bubbling)");
+      });
+
+      padre.addEventListener(
+        "click",
+        function () {
+          console.log("Evento en el padre (capturing)");
+        },
+        true
+      );
+
+      hijo.addEventListener(
+        "click",
+        function () {
+          console.log("Evento en el hijo (capturing)");
+        },
+        true
+      );
+    </script>
+  </body>
+</html>
+```
+
+## Método stopPropagation() en JavaScript
+
+El método stopPropagation() es utilizado en JavaScript para detener la propagación del flujo de eventos en el DOM. Permite evitar que un evento se propague más allá del elemento actual hacia elementos padres o hijos.
+
+```jsx
+<div id="contenedor">
+  <button id="boton">Haz clic aquí</button>
+</div>
+
+<script>
+  const contenedor = document.getElementById("contenedor");
+  const boton = document.getElementById("boton");
+
+  contenedor.addEventListener("click", function() {
+    console.log("Evento en el contenedor");
+  });
+
+  boton.addEventListener("click", function(event) {
+    console.log("Evento en el botón");
+    event.stopPropagation(); // Detener la propagación
+  });
+</script>
+```
+
+En el ejemplo anterior, al hacer clic en el botón, se detiene la propagación del evento hacia el elemento contenedor, por lo que solo se muestra el mensaje "Evento en el botón" en la consola.
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Método stopPropagation() en JavaScript</title>
+  </head>
+  <body>
+    <div id="contenedor">
+      <button id="boton">Haz clic aquí</button>
+    </div>
+
+    <script>
+      const contenedor = document.getElementById("contenedor");
+      const boton = document.getElementById("boton");
+
+      contenedor.addEventListener("click", function () {
+        console.log("Evento en el contenedor");
+      });
+
+      boton.addEventListener("click", function (event) {
+        console.log("Evento en el botón");
+        event.stopPropagation(); // Detener la propagación
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Eventos del Mouse en JavaScript
+
+Los eventos del mouse son interacciones que ocurren cuando un usuario interactúa con elementos de una página web utilizando el mouse. Estos eventos permiten responder a acciones como clics, movimientos y desplazamientos del mouse.
+
+## Tipos de Eventos del Mouse
+
+### click
+
+El evento click se dispara cuando el usuario hace clic en un elemento con el botón izquierdo del mouse.
+
+```jsx
+const boton = document.getElementById("mi-boton");
+
+boton.addEventListener("click", function () {
+  console.log("Botón clickeado");
+});
+```
+
+### mouseover y mouseout
+
+El evento mouseover ocurre cuando el cursor del mouse entra en un elemento, mientras que mouseout ocurre cuando el cursor sale del elemento.
+
+```jsx
+const elemento = document.getElementById("mi-elemento");
+
+elemento.addEventListener("mouseover", function () {
+  console.log("Mouse sobre el elemento");
+});
+
+elemento.addEventListener("mouseout", function () {
+  console.log("Mouse fuera del elemento");
+});
+```
+
+### mousemove
+
+El evento mousemove se dispara mientras el usuario mueve el mouse sobre un elemento.
+
+```jsx
+const contenedor = document.getElementById("mi-contenedor");
+
+contenedor.addEventListener("mousemove", function (event) {
+  console.log(`Posición X: ${event.clientX}, Posición Y: ${event.clientY}`);
+});
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eventos del Mouse en JavaScript</title>
+  </head>
+  <body>
+    <button id="mi-boton">Haz clic</button>
+    <div
+      id="mi-elemento"
+      style="width: 200px; height: 100px; background-color: lightblue;"
+    ></div>
+    <div
+      id="mi-contenedor"
+      style="width: 300px; height: 300px; background-color: lightgray;"
+    ></div>
+
+    <script>
+      const boton = document.getElementById("mi-boton");
+      const elemento = document.getElementById("mi-elemento");
+      const contenedor = document.getElementById("mi-contenedor");
+
+      boton.addEventListener("click", function () {
+        console.log("Botón clickeado");
+      });
+
+      elemento.addEventListener("mouseover", function () {
+        console.log("Mouse sobre el elemento");
+      });
+
+      elemento.addEventListener("mouseout", function () {
+        console.log("Mouse fuera del elemento");
+      });
+
+      contenedor.addEventListener("mousemove", function (event) {
+        console.log(
+          `Posición X: ${event.clientX}, Posición Y: ${event.clientY}`
+        );
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Eventos de Teclado en JavaScript
+
+Los eventos de teclado permiten detectar y responder a las acciones del usuario al presionar y soltar teclas en el teclado. Esto es útil para capturar entradas de texto, atajos de teclado y otras interacciones relacionadas con el teclado.
+
+## Tipos de Eventos de Teclado
+
+### keydown
+
+El evento keydown se dispara cuando el usuario presiona una tecla en el teclado.
+
+```jsx
+document.addEventListener("keydown", function (event) {
+  console.log("Tecla presionada:", event.key);
+});
+```
+
+### keyup
+
+El evento keyup se dispara cuando el usuario suelta una tecla que había presionado previamente.
+
+```jsx
+document.addEventListener("keyup", function (event) {
+  console.log("Tecla soltada:", event.key);
+});
+```
+
+### keypress
+
+Aunque menos común, el evento keypress también se dispara cuando el usuario presiona una tecla en el teclado, pero no incluye teclas de control como **`Shift`**, **`Ctrl`** o **`Alt`**.
+
+```jsx
+document.addEventListener("keypress", function (event) {
+  console.log("Tecla presionada (keypress):", event.key);
+});
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eventos de Teclado en JavaScript</title>
+  </head>
+  <body>
+    <input id="mi-input" type="text" placeholder="Escribe aquí" />
+
+    <script>
+      const miInput = document.getElementById("mi-input");
+
+      miInput.addEventListener("keydown", function (event) {
+        console.log("Tecla presionada:", event.key);
+      });
+
+      miInput.addEventListener("keyup", function (event) {
+        console.log("Tecla soltada:", event.key);
+      });
+
+      miInput.addEventListener("keypress", function (event) {
+        console.log("Tecla presionada (keypress):", event.key);
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Eventos de Interfaz en JavaScript
+
+Los eventos de interfaz se producen cuando interactúas con elementos de la interfaz gráfica de una página web. Puedes responder a estos eventos para crear interacciones dinámicas y mejorar la experiencia del usuario.
+
+### click
+
+El evento click se dispara cuando haces clic en un elemento, como un botón o un enlace.
+
+```jsx
+const boton = document.getElementById("mi-boton");
+
+boton.addEventListener("click", function () {
+  console.log("Botón clickeado");
+});
+```
+
+### submit
+
+El evento submit ocurre cuando envías un formulario.
+
+```jsx
+const formulario = document.getElementById("mi-formulario");
+
+formulario.addEventListener("submit", function (event) {
+  event.preventDefault(); // Evita el envío del formulario
+  console.log("Formulario enviado");
+});
+```
+
+### change
+
+El evento change se activa cuando cambias el valor de un elemento de entrada, como una casilla de verificación o un campo de selección.
+
+```jsx
+const casillaVerificacion = document.getElementById("mi-casilla");
+
+casillaVerificacion.addEventListener("change", function () {
+  console.log("Casilla de verificación cambió");
+});
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eventos de Interfaz en JavaScript</title>
+  </head>
+  <body>
+    <button id="mi-boton">Haz clic</button>
+
+    <form id="mi-formulario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <input type="checkbox" id="mi-casilla" />
+    <label for="mi-casilla">Casilla de Verificación</label>
+
+    <script>
+      const boton = document.getElementById("mi-boton");
+      const formulario = document.getElementById("mi-formulario");
+      const casillaVerificacion = document.getElementById("mi-casilla");
+
+      boton.addEventListener("click", function () {
+        console.log("Botón clickeado");
+      });
+
+      formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+        console.log("Formulario enviado");
+      });
+
+      casillaVerificacion.addEventListener("change", function () {
+        console.log("Casilla de verificación cambió");
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Temporizadores (Timers) en JavaScript
+
+Los temporizadores en JavaScript te permiten ejecutar código en momentos específicos o después de un cierto intervalo de tiempo. Son útiles para crear animaciones, ejecutar tareas periódicas y controlar el tiempo de espera en tus aplicaciones.
+
+## Tipos de Temporizadores
+
+### setTimeout()
+
+La función **setTimeout()** permite ejecutar una función después de un cierto período de tiempo.
+
+```jsx
+function mensaje() {
+  console.log("¡Tiempo agotado!");
+}
+
+setTimeout(mensaje, 2000); // Ejecutar después de 2000 ms (2 segundos)
+```
+
+### setInterval()
+
+La función **setInterval()** ejecuta una función en intervalos regulares de tiempo.
+
+```jsx
+function actualizacion() {
+  console.log("Actualización cada segundo");
+}
+
+setInterval(actualizacion, 1000); // Ejecutar cada 1000 ms (1 segundo)
+```
+
+### clearTimeout() y clearInterval()
+
+Puedes usar **clearTimeout()** para cancelar la ejecución de un temporizador creado con **setTimeout()\*, o **clearInterval()** para detener la ejecución de un temporizador creado con **setInterval()\*\*.
+
+```jsx
+const temporizador = setTimeout(function () {
+  console.log("Este mensaje nunca se mostrará");
+}, 5000);
+
+clearTimeout(temporizador); // Cancelar el temporizador
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Temporizadores en JavaScript</title>
+  </head>
+  <body>
+    <p id="contador">0</p>
+
+    <script>
+      let contador = 0;
+      const contadorElemento = document.getElementById("contador");
+
+      // Temporizador usando setTimeout
+      function aumentarContador() {
+        contador++;
+        contadorElemento.textContent = contador;
+        setTimeout(aumentarContador, 1000);
+      }
+
+      // Comenzar el temporizador
+      aumentarContador();
+    </script>
+  </body>
+</html>
+```
+
+## Control de Flujo y Manejo de Errores en JavaScript
+
+## Manejo de Errores con try, catch y finally
+
+El bloque try se utiliza para envolver el código que podría generar errores. El bloque catch captura y maneja los errores que ocurren en el bloque **`try`**. El bloque **`finally`** se ejecuta siempre, independientemente de si se produjo un error.
+
+```jsx
+try {
+  // Código que podría generar un error
+  const resultado = 10 / 0;
+} catch (error) {
+  console.error("Error:", error.message);
+} finally {
+  console.log("Bloque finally ejecutado.");
+}
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Control de Flujo y Manejo de Errores en JavaScript</title>
+  </head>
+  <body>
+    <p id="resultado"></p>
+
+    <script>
+      // Manejo de errores
+      try {
+        const resultado = 10 / 0;
+      } catch (error) {
+        console.error("Error:", error.message);
+      } finally {
+        console.log("Bloque finally ejecutado.");
+      }
+    </script>
+  </body>
+</html>
+```
+
+## Sentencia switch en JavaScript
+
+La sentencia switch en JavaScript se utiliza para evaluar una expresión y ejecutar diferentes bloques de código según el valor de esa expresión. Es especialmente útil cuando se necesitan realizar múltiples comparaciones con el mismo valor.
+
+```jsx
+const diaSemana = 3;
+
+switch (diaSemana) {
+  case 1:
+    console.log("Lunes");
+    break;
+  case 2:
+    console.log("Martes");
+    break;
+  case 3:
+    console.log("Miércoles");
+    break;
+  case 4:
+    console.log("Jueves");
+    break;
+  case 5:
+    console.log("Viernes");
+    break;
+  default:
+    console.log("Fin de semana");
+}
+```
+
+### Sintaxis de la Sentencia switch
+
+```jsx
+switch (expresion) {
+  case valor1:
+    // Código a ejecutar si expresion === valor1
+    break;
+  case valor2:
+    // Código a ejecutar si expresion === valor2
+    break;
+  // ...
+  default:
+  // Código a ejecutar si ningún caso coincide
+}
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sentencia switch en JavaScript</title>
+  </head>
+  <body>
+    <p id="resultado"></p>
+
+    <script>
+      const diaSemana = 3;
+      const resultadoElemento = document.getElementById("resultado");
+
+      switch (diaSemana) {
+        case 1:
+          resultadoElemento.textContent = "Lunes";
+          break;
+        case 2:
+          resultadoElemento.textContent = "Martes";
+          break;
+        case 3:
+          resultadoElemento.textContent = "Miércoles";
+          break;
+        case 4:
+          resultadoElemento.textContent = "Jueves";
+          break;
+        case 5:
+          resultadoElemento.textContent = "Viernes";
+          break;
+        default:
+          resultadoElemento.textContent = "Fin de semana";
+      }
+    </script>
+  </body>
+</html>
+```
+
+## Callbacks en JavaScript
+
+Los callbacks son funciones que se pasan como argumentos a otras funciones y se ejecutan después de que se haya completado una operación o evento. Son una parte fundamental de la programación asincrónica en JavaScript y se utilizan para controlar el flujo de ejecución en situaciones donde el orden de las operaciones no es predecible.
+
+## Ejemplo Sincrónico
+
+```jsx
+function operacion1() {
+  console.log("Operación 1 completada");
+}
+
+function operacion2() {
+  console.log("Operación 2 completada");
+}
+
+function realizarOperaciones(callback1, callback2) {
+  callback1();
+  callback2();
+}
+
+realizarOperaciones(operacion1, operacion2);
+```
+
+## Ejemplo Asincrónico
+
+```jsx
+function operacionAsincronica(callback) {
+  setTimeout(function () {
+    console.log("Operación asincrónica completada");
+    callback();
+  }, 2000);
+}
+
+function finalizar() {
+  console.log("Todas las operaciones han finalizado");
+}
+
+operacionAsincronica(finalizar);
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Callbacks en JavaScript</title>
+  </head>
+  <body>
+    <button id="boton">Realizar Operación</button>
+
+    <script>
+      const boton = document.getElementById("boton");
+
+      function operacionAsincronica(callback) {
+        setTimeout(function () {
+          console.log("Operación asincrónica completada");
+          callback();
+        }, 2000);
+      }
+
+      function finalizar() {
+        console.log("Todas las operaciones han finalizado");
+      }
+
+      boton.addEventListener("click", function () {
+        console.log("Botón clickeado");
+        operacionAsincronica(finalizar);
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Promesas en JavaScript
+
+Las promesas son una forma de manejar operaciones asincrónicas en JavaScript. Proporcionan una estructura más organizada y legible para trabajar con código asíncrono y permiten manejar los resultados exitosos o los errores de manera más eficiente.
+
+## Creación de una Promesa
+
+```jsx
+const miPromesa = new Promise(function (resolve, reject) {
+  // Realizar operación asincrónica
+  const exito = true; // Puedes cambiar esto a false para simular un error
+
+  if (exito) {
+    resolve("Operación exitosa");
+  } else {
+    reject("Ocurrió un error");
+  }
+});
+```
+
+## Uso de then y catch
+
+```jsx
+miPromesa
+  .then(function (resultado) {
+    console.log("Éxito:", resultado);
+  })
+  .catch(function (error) {
+    console.error("Error:", error);
+  });
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Promesas en JavaScript</title>
+  </head>
+  <body>
+    <button id="boton">Realizar Operación</button>
+
+    <script>
+      const boton = document.getElementById("boton");
+
+      function operacionAsincronica() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            const exito = true;
+
+            if (exito) {
+              resolve("Operación exitosa");
+            } else {
+              reject("Ocurrió un error");
+            }
+          }, 2000);
+        });
+      }
+
+      boton.addEventListener("click", function () {
+        console.log("Botón clickeado");
+        operacionAsincronica()
+          .then(function (resultado) {
+            console.log("Éxito:", resultado);
+          })
+          .catch(function (error) {
+            console.error("Error:", error);
+          });
+      });
+    </script>
+  </body>
+</html>
+```
+
+## async y await en JavaScript
+
+async y await son características de JavaScript que facilitan la programación asincrónica. Permiten escribir código asíncrono de manera más legible y parecida al estilo síncrono, lo que simplifica el manejo de promesas.
+
+## Uso de async y await
+
+```jsx
+async function funcionAsincrona() {
+  try {
+    const resultado = await operacionAsincronica();
+    console.log("Resultado:", resultado);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>async y await en JavaScript</title>
+  </head>
+  <body>
+    <button id="boton">Realizar Operación</button>
+
+    <script>
+      const boton = document.getElementById("boton");
+
+      async function operacionAsincronica() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            const exito = true;
+
+            if (exito) {
+              resolve("Operación exitosa");
+            } else {
+              reject("Ocurrió un error");
+            }
+          }, 2000);
+        });
+      }
+
+      boton.addEventListener("click", async function () {
+        console.log("Botón clickeado");
+        try {
+          const resultado = await operacionAsincronica();
+          console.log("Resultado:", resultado);
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Peticiones HTTP en JavaScript utilizando fetch
+
+Las peticiones HTTP son solicitudes que se envían desde el navegador a un servidor web para obtener o enviar datos. En JavaScript, puedes utilizar la función **`fetch`** para realizar peticiones HTTP y trabajar con las respuestas.
+
+## Uso de fetch para Obtener Datos
+
+```jsx
+fetch("https://api.example.com/data")
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
+```
+
+## Uso de fetch para Enviar Datos (POST)
+
+```jsx
+const datos = {
+  nombre: "Usuario",
+  edad: 25,
+};
+
+fetch("https://api.example.com/usuarios", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(datos),
+})
+  .then((response) => response.json())
+  .then((data) => console.log("Respuesta:", data))
+  .catch((error) => console.error("Error:", error));
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Peticiones HTTP en JavaScript</title>
+  </head>
+  <body>
+    <button id="obtener">Obtener Datos</button>
+    <button id="enviar">Enviar Datos</button>
+
+    <script>
+      const botonObtener = document.getElementById("obtener");
+      const botonEnviar = document.getElementById("enviar");
+
+      botonObtener.addEventListener("click", function () {
+        fetch("https://jsonplaceholder.typicode.com/posts/1")
+          .then((response) => response.json())
+          .then((data) => console.log("Datos obtenidos:", data))
+          .catch((error) => console.error("Error:", error));
+      });
+
+      botonEnviar.addEventListener("click", function () {
+        const datos = {
+          title: "Nuevo Título",
+          body: "Contenido del post",
+          userId: 1,
+        };
+
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(datos),
+        })
+          .then((response) => response.json())
+          .then((data) => console.log("Respuesta:", data))
+          .catch((error) => console.error("Error:", error));
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Trabajando con Datos Estructurados (JSON) en JavaScript
+
+JSON (JavaScript Object Notation) es un formato ligero y legible utilizado para representar datos estructurados en forma de objetos y arrays. Es ampliamente utilizado para intercambiar información entre servidores y clientes en aplicaciones web.
+
+## Parseo de JSON
+
+```jsx
+const jsonTexto = '{"nombre": "Juan", "edad": 30}';
+const objetoJSON = JSON.parse(jsonTexto);
+
+console.log(objetoJSON.nombre); // Salida: Juan
+console.log(objetoJSON.edad); // Salida: 30
+```
+
+## Convertir a JSON
+
+```jsx
+const objetoDatos = {
+  nombre: "María",
+  edad: 25,
+  ciudad: "Madrid",
+};
+
+const jsonTexto = JSON.stringify(objetoDatos);
+
+console.log(jsonTexto);
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trabajando con JSON en JavaScript</title>
+  </head>
+  <body>
+    <p id="resultado"></p>
+
+    <script>
+      const resultadoElemento = document.getElementById("resultado");
+
+      // Parseo de JSON
+      const jsonTexto = '{"producto": "Camiseta", "precio": 20}';
+      const objetoJSON = JSON.parse(jsonTexto);
+
+      resultadoElemento.textContent = `Producto: ${objetoJSON.producto}, Precio: ${objetoJSON.precio}`;
+
+      // Convertir a JSON
+      const objetoDatos = {
+        producto: "Zapatos",
+        precio: 50,
+      };
+
+      const jsonTextoConvertido = JSON.stringify(objetoDatos);
+      console.log("JSON Convertido:", jsonTextoConvertido);
+    </script>
+  </body>
+</html>
+```
+
+## Arrastrar y Soltar (Drag & Drop) en JavaScript
+
+La funcionalidad de arrastrar y soltar (Drag & Drop) permite a los usuarios agarrar elementos en una página web y moverlos a una ubicación diferente. En JavaScript, puedes implementar esta interacción utilizando eventos y funciones de manipulación del DOM.
+
+## Implementación Básica
+
+### HTML
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrastrar y Soltar en JavaScript</title>
+    <style>
+      .contenedor {
+        width: 200px;
+        height: 200px;
+        border: 2px dashed #ccc;
+        padding: 10px;
+      }
+      .elemento {
+        width: 100px;
+        height: 100px;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor" id="contenedor">
+      <div class="elemento" draggable="true" id="elemento">Arrástrame</div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+```
+
+### JavaScript (script.js)
+
+```jsx
+const elemento = document.getElementById("elemento");
+const contenedor = document.getElementById("contenedor");
+
+elemento.addEventListener("dragstart", function (event) {
+  event.dataTransfer.setData("text/plain", "Mi elemento arrastrable");
+});
+
+contenedor.addEventListener("dragover", function (event) {
+  event.preventDefault();
+});
+
+contenedor.addEventListener("drop", function (event) {
+  event.preventDefault();
+  const textoArrastrado = event.dataTransfer.getData("text/plain");
+  contenedor.innerHTML += `<p>${textoArrastrado}</p>`;
+});
+```

@@ -1,0 +1,78 @@
+---
+interface Props {
+  title: string;
+  descripcion: string;
+  data: string;
+  url: string;
+  tag: Array<string>;
+  color: string;
+}
+
+const { url, title, descripcion, data, tag, color } = Astro.props;
+---
+
+<ul class="flex flex-col max-w-3xl space-y-16 px-4">
+  <a
+    href={url}
+    style=`--clr:${color};`
+    class="card max-w-2xl px-5 relative flex flex-col items-start rounded-[20px] border-2 bg-gradi_dark backdrop-blur border-FL p-4 shadow hover:shadow-lg overflow-hidden gap-6"
+  >
+    <li class="flex flex-col relative z-10 items-start justify-between gap-4">
+      <h3 class="text-xl font-bold">{title}</h3>
+      <p class="text-gradi_light">
+        {
+          tag.map((t) => (
+            <span class="p-2 border border-gradi_light rounded-lg mr-3">
+              #{t}
+            </span>
+          ))
+        }
+      </p>
+      <p class="text-FS">{descripcion}</p>
+      <time
+        class="relative z-10 flex items-center text-sm body-secondary text-FS font-semibold"
+        datetime="04 de Noviembre de 2023">{data}</time
+      >
+    </li>
+  </a>
+</ul>
+<script>
+  let cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    card.onmousemove = function (e) {
+      let x = e.pageX - card.offsetLeft;
+      let y = e.pageY - card.offsetTop;
+
+      card.style.setProperty("--x", x + "px");
+      card.style.setProperty("--y", y + "px");
+    };
+  });
+</script>
+
+<style>
+  .card::before {
+    content: "";
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: radial-gradient(var(--clr), transparent, transparent);
+    width: 700px;
+    height: 700px;
+    opacity: 0;
+    transition:
+      0.5s,
+      top 0s,
+      left 0s;
+  }
+  .card:hover::before {
+    opacity: 1;
+  }
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 18px;
+  }
+</style>

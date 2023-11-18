@@ -1,0 +1,92 @@
+<section
+  class="relative w-full h-screen flex flex-col py-3 md:py-1 px-1 overflow-hidden justify-center bg-Cuarto"
+>
+  <div
+    class="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-20 flex flex-col items-center gap-2"
+  >
+    <span class="text-[7em] text-white font-mplus font-bold">Ooops 404</span>
+    <a
+      href="/"
+      class="px-5 py-2 border-2 border-newPalette7 text-white rounded-md text-xl font-semibold hover:border-newPalette3 transition-colors"
+      >inicio</a
+    >
+  </div>
+  <div
+    class="w-full h-full justify-items-center grid gap-2 grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 grid-rows-7"
+  >
+    <div style="--clr: #45FFCA;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #FF8080;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #C70039;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #982176;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #6F61C0;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #F94C10;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #F8DE22;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #0079FF;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #FE6244;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #16FF00;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #FB2576;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #F0FF42;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #00F5FF;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #9CFF2E;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #D61C4E;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #590696;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #F806CC;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #FF8D29;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #143F6B;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #FFC600;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #B3E5BE;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #A7727D;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #ECA869;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #DFD3C3;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #F7A4A4;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #554994;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #F29393;" class="w-full h-[132px] fond"></div>
+    <div style="--clr: #FFCCB3;" class="w-full h-[132px] fond"></div>
+  </div>
+</section>
+<script>
+  let cards = document.querySelectorAll(".fond");
+  cards.forEach((card) => {
+    card.onmousemove = function (e) {
+      let x = e.pageX - card.offsetLeft;
+      let y = e.pageY - card.offsetTop;
+
+      card.style.setProperty("--x", x + "px");
+      card.style.setProperty("--y", y + "px");
+    };
+  });
+</script>
+
+<style>
+  .fond {
+    position: relative;
+    background: rgba(20, 20, 20, 0.44);
+    overflow: hidden;
+    border-radius: 15px;
+  }
+  .fond::before {
+    content: "";
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background: radial-gradient(var(--clr), transparent, transparent);
+    opacity: 0;
+    /* transition:
+      0.5s,
+      top 0s,
+      left 0s;*/
+  }
+  .fond:hover::before {
+    opacity: 1;
+  }
+  .fond::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 18px;
+  }
+</style>

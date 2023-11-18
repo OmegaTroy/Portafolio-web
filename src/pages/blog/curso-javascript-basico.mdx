@@ -1,0 +1,2109 @@
+---
+title: "curso de JavaScript basico"
+descripcion: "este es el nivel basico de javaScript en el vemos desde lo mas basico hasta poder llegar a manipular el dom"
+next: "/blog/curso-javascript-avanzado"
+url: "/blog/curso-javascript-basico"
+color: "#00dc82"
+tag: [curso, JavaScript]
+layout: "../../layouts/LayoutCursos.astro"
+data: "06 de Noviembre de 2023"
+---
+
+# Curso de JavaScript Nivel Junior
+
+---
+
+## importante si queres buscar algo en contreto usa el **F3**
+
+<img src="/js-1.avif" />
+
+## variables
+
+las variable son un espacio de **memoria** al que le podemos asignar un valor y lo guardarlo
+
+pueden ser numeros, textos, booleanos, undefined y null.
+
+visto en codigo seria asi :
+
+`let nombre = “juan”` esto es un String.
+
+`let edad = 32` esto es un Number.
+
+`let booleano = true` esto es un Booleano puede ser true o false (1 o 0).
+
+`let valor` esto es undefined automáticamente asignado a las variables que solo han sido declarados
+y no se le da un valor (valor asignado por uno mismo)
+
+`Null` null significa que no se encuentra o no existe
+
+tambien tenemos 3 tipos de variables **let, const, var**.
+
+var ya no se usa mas por rendimiento y para tener un codigo mas limpio.
+
+1. ### **let** → es de corto alcanse pero se puede cambiar el valor.
+2. ### **const** → es de corto alcanse pero no se puede cambiar el valor.
+3. ### **var** → es de alcanse global y se puede cambiar el valor.
+
+el scope es el alcanse en bloque de una variable.
+
+## Operadores Aritméticos
+
+> > Los operadores aritméticos en JavaScript se utilizan para realizar cálculos matemáticos básicos. A continuación se muestran los operadores aritméticos disponibles en JavaScript:
+
+- **(+)** (suma): se utiliza para sumar dos valores.
+- **(-)** (resta): se utiliza para restar un valor de otro.
+- **(\*)** (multiplicación): se utiliza para multiplicar dos valores.
+- **(/)** (división): se utiliza para dividir un valor por otro.
+- **(%)** (módulo): se utiliza para obtener el resto de la división de dos valores.
+- **(++)** (incremento): se utiliza para aumentar el valor de una variable en uno.
+- **(--)** (decremento): se utiliza para disminuir el valor de una variable en uno.
+
+> ## Operadores Lógicos
+
+Los operadores lógicos en JavaScript se utilizan para realizar operaciones lógicas. A continuación se muestran los operadores lógicos disponibles en JavaScript:
+
+- **(&&)** (AND lógico): devuelve **true** si ambos operandos son verdaderos.
+- **(||)** (OR lógico): devuelve **true** si al menos uno de los operandos es verdadero.
+- **!** (NOT lógico): devuelve el valor opuesto del operando.
+
+> ## Operadores de Comparación
+
+Los operadores de comparación en JavaScript se utilizan para comparar dos valores. A continuación se muestran los operadores de comparación disponibles en JavaScript:
+
+- `==` (igual a): devuelve **true** si ambos operandos son iguales.
+- `!=` (diferente de): devuelve **true** si ambos operandos no son iguales.
+- `>` (mayor que): devuelve **true** si el primer operando es mayor que el segundo.
+- `<` (menor que): devuelve **true** si el primer operando es menor que el segundo.
+- `>=` (mayor o igual que): devuelve **true** si el primer operando es mayor o igual que el segundo.
+- `<=` (menor o igual que): devuelve **true** si el primer operando es menor o igual que el segundo.
+- `===` (igualdad estricta): devuelve **true** si ambos operandos son iguales y del mismo tipo de dato.
+- `!==` (diferencia estricta): devuelve **true** si ambos operandos no son iguales o no son del mismo tipo de dato.
+
+> ## Operadores de Asignación
+
+Los operadores de asignación en JavaScript se utilizan para asignar un valor a una variable. A continuación se muestran los operadores de asignación disponibles en JavaScript:
+
+- `=` (asignación): se utiliza para asignar un valor a una variable.
+- `+=` (suma y asignación): se utiliza para sumar un valor a una variable y asignar el resultado a la misma variable.
+- `-=` (resta y asignación): se utiliza para restar un valor a una variable y asignar el resultado a la misma variable.
+- `*=` (multiplicación y asignación): se utiliza para multiplicar un valor a una variable y asignar el resultado a la misma variable.
+- `/=` (división y asignación): se utiliza para dividir un valor a una variable y asignar el resultado a la misma variable.
+- `%=` (módulo y asignación): se utiliza para obtener el resto de la división de dos valores y asignar el resultado a la misma variable.
+- `<<=` (desplazamiento a la izquierda y asignación): se utiliza para desplazar los bits de un valor a la izquierda y asignar el resultado a la misma variable.
+- `>>=` (desplazamiento a la derecha y asignación): se utiliza para desplazar los bits de un valor a la derecha y asignar el resultado a la misma variable.
+- `>>>=` (desplazamiento a la derecha sin signo y asignación): se utiliza para desplazar los bits de un valor a la derecha sin signo y asignar el resultado a la misma variable.
+- `&=` (AND a nivel de bits y asignación): se utiliza para realizar una operación AND a nivel de bits entre dos valores y asignar el resultado a la misma variable.
+- `^=` (OR exclusivo a nivel de bits y asignación): se utiliza para realizar una operación OR exclusivo a nivel de bits entre dos valores y asignar el resultado a la misma variable.
+- `|=` (OR a nivel de bits y asignación): se utiliza para realizar una operación OR a nivel de bits entre dos valores y asignar el resultado a la misma variable.
+
+## Operador Ternario
+
+El operador ternario en JavaScript se utiliza para tomar decisiones basadas en una expresión booleana. A continuación se muestra la sintaxis del operador ternario:
+
+### condición ? expresión1 : expresión2
+
+Si la condición es verdadera, se devuelve la expresión1. Si la condición es falsa, se devuelve la expresión2.
+
+## Operador de Concatenación
+
+El operador de concatenación en JavaScript se utiliza para unir dos o más cadenas de texto. A continuación se muestra el operador de concatenación:
+
+**(+)** (concatenación): se utiliza para unir dos o más cadenas de texto.
+
+Por ejemplo:
+
+```jsx
+const saludo = "Hola";
+const nombre = "Juan";
+const mensaje = saludo + " " + nombre + ", ¿cómo estás?";
+console.log(mensaje); // Hola Juan, ¿cómo estás?
+```
+
+¡Listo! Ahora ya conoces todos los operadores disponibles en JavaScript.
+
+## Condicionales en JavaScript
+
+Los condicionales en JavaScript se utilizan para realizar diferentes acciones en función de si se cumple o no una determinada condición. A continuación se muestran los diferentes tipos de condicionales disponibles en JavaScript:
+
+## if
+
+La sentencia if se utiliza para realizar una acción si se cumple una determinada condición. La sintaxis es la siguiente:
+
+```jsx
+if (condicion) {
+  // código a ejecutar si la condición se cumple
+}
+```
+
+Por ejemplo:
+
+```jsx
+let edad = 18;
+
+if (edad >= 18) {
+  console.log("Eres mayor de edad");
+}
+```
+
+En este caso, si la variable edad es mayor o igual a 18, se mostrará por consola el mensaje "Eres mayor de edad".
+
+## if...else
+
+La sentencia if...else se utiliza para realizar una acción si se cumple una determinada condición, y otra acción si no se cumple. La sintaxis es la siguiente:
+
+```jsx
+if (condicion) {
+  // código a ejecutar si la condición se cumple
+} else {
+  // código a ejecutar si la condición no se cumple
+}
+```
+
+Por ejemplo:
+
+```jsx
+let edad = 16;
+
+if (edad >= 18) {
+  console.log("Eres mayor de edad");
+} else {
+  console.log("Eres menor de edad");
+}
+```
+
+En este caso, si la variable edad es mayor o igual a 18, se mostrará por consola el mensaje "Eres mayor de edad"; de lo contrario, se mostrará el mensaje "Eres menor de edad".
+
+## if... else if...else
+
+La sentencia if...else if...else se utiliza para realizar una acción si se cumple una determinada condición, otra acción si se cumple otra condición, y una acción por defecto si no se cumple ninguna de las condiciones anteriores. La sintaxis es la siguiente:
+
+```jsx
+if (condicion1) {
+  // código a ejecutar si la condición 1 se cumple
+} else if (condicion2) {
+  // código a ejecutar si la condición 2 se cumple
+} else {
+  // código a ejecutar si ninguna de las condiciones se cumple
+}
+```
+
+Por ejemplo:
+
+```jsx
+let nota = 7;
+
+if (nota >= 9) {
+  console.log("Sobresaliente");
+} else if (nota >= 7) {
+  console.log("Notable");
+} else if (nota >= 5) {
+  console.log("Aprobado");
+} else {
+  console.log("Suspenso");
+}
+```
+
+En este caso, si la variable nota es mayor o igual a 9, se mostrará por consola el mensaje "Sobresaliente"; si la variable `nota` es mayor o igual a `7` pero menor que `9`, se mostrará el mensaje "Notable"; si la variable `nota` es mayor o igual a `5` pero menor que `7`, se mostrará el mensaje "Aprobado"; y si la variable `nota` es menor que `5`, se mostrará el mensaje "Suspenso".
+
+¡Ahora ya sabes cómo utilizar los diferentes tipos de condicionales en JavaScript!
+
+## Arrays en JavaScript
+
+Un array en JavaScript es una estructura de datos que nos permite almacenar una colección de elementos en una sola variable. Cada elemento en un array tiene una posición numérica llamada índice, que comienza en 0.
+
+## Crear un array
+
+Podemos crear un array en JavaScript utilizando la siguiente sintaxis:
+
+```jsx
+let miArray = [elemento1, elemento2, elemento3];
+```
+
+También podemos crear un array vacío utilizando la siguiente sintaxis:
+
+```jsx
+let miArray = [];
+```
+
+## Acceder a los elementos de un array
+
+Podemos acceder a los elementos de un array utilizando su índice. La sintaxis es la siguiente:
+
+```jsx
+let miArray = [elemento1, elemento2, elemento3];
+console.log(miArray[0]); // elemento1
+```
+
+## Modificar los elementos de un array
+
+Podemos modificar los elementos de un array utilizando su índice. La sintaxis es la siguiente:
+
+```jsx
+let miArray = [elemento1, elemento2, elemento3];
+miArray[0] = nuevoElemento;
+console.log(miArray); // [nuevoElemento, elemento2, elemento3]
+```
+
+## Añadir elementos a un array
+
+Podemos añadir elementos a un array utilizando el método push(). La sintaxis es la siguiente:
+
+```jsx
+let miArray = [elemento1, elemento2, elemento3];
+miArray.push(nuevoElemento);
+console.log(miArray); // [elemento1, elemento2, elemento3, nuevoElemento]
+```
+
+## Eliminar elementos de un array
+
+Podemos eliminar elementos de un array utilizando el método splice(). La sintaxis es la siguiente:
+
+```jsx
+let miArray = [elemento1, elemento2, elemento3];
+miArray.splice(1, 1);
+console.log(miArray); // [elemento1, elemento3]
+```
+
+En este ejemplo, el primer parámetro del método splice() indica el índice del primer elemento que queremos eliminar, y el segundo parámetro indica la cantidad de elementos que queremos eliminar a partir del índice especificado.
+
+## Iterar sobre un array
+
+Podemos iterar sobre los elementos de un array utilizando un bucle for. La sintaxis es la siguiente:
+
+```jsx
+let miArray = [elemento1, elemento2, elemento3];
+for (let i = 0; i < miArray.length; i++) {
+  console.log(miArray[i]);
+}
+```
+
+## Métodos útiles en arrays
+
+JavaScript también proporciona una gran cantidad de métodos útiles que podemos utilizar en los arrays, como sort(), `reverse()`, `slice()`, `join()`, `map()`, `filter()`, `reduce()`, entre otros. Estos métodos nos permiten realizar operaciones comunes en los arrays de una manera más sencilla y eficiente.
+
+¡Eso es todo! Ahora ya sabes cómo trabajar con arrays en JavaScript.
+
+## Bucles e Iteración en JavaScript
+
+### Introducción a los Bucles
+
+Los bucles son estructuras fundamentales en la programación que permiten ejecutar un bloque de código repetidamente hasta que se cumpla una condición específica.
+
+## Tipos de Bucles
+
+### 1. Bucle "for"
+
+El bucle "for" se utiliza para ejecutar un bloque de código un número específico de veces.
+
+```jsx
+for (let i = 0; i < 5; i++) {
+  console.log("Iteración #" + i);
+}
+```
+
+### 2. Bucle "while"
+
+El bucle "while" se ejecuta mientras una condición dada sea verdadera.
+
+```jsx
+let contador = 0;
+while (contador < 3) {
+  console.log("Contador: " + contador);
+  contador++;
+}
+```
+
+### 3. Bucle "do-while"
+
+Similar al bucle "while", el bucle "do-while" ejecuta el bloque de código al menos una vez y luego continúa mientras la condición sea verdadera.
+
+```jsx
+let x = 0;
+do {
+  console.log("x es igual a " + x);
+  x++;
+} while (x < 3);
+```
+
+## Uso de Bucles
+
+### Iteración a través de un Array
+
+Los bucles son útiles para recorrer elementos de un array.
+
+```jsx
+const frutas = ["manzana", "plátano", "naranja"];
+for (let i = 0; i < frutas.length; i++) {
+  console.log("Fruta: " + frutas[i]);
+}
+```
+
+### Bucle "for...of"
+
+El bucle "for...of" permite iterar sobre valores de un objeto iterable, como un array.
+
+```jsx
+const numeros = [1, 2, 3, 4, 5];
+for (const numero of numeros) {
+  console.log("Número: " + numero);
+}
+```
+
+## Control de Bucles
+
+### Instrucción "break"
+
+La instrucción "break" se utiliza para salir de un bucle antes de que se cumpla la condición.
+
+```jsx
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    break;
+  }
+  console.log("Valor: " + i);
+}
+```
+
+### Instrucción "continue"
+
+La instrucción "continue" se utiliza para omitir la iteración actual y continuar con la siguiente.
+
+```jsx
+for (let i = 0; i < 5; i++) {
+  if (i === 2) {
+    continue;
+  }
+  console.log("Iteración: " + i);
+}
+```
+
+---
+
+## Funciones en JavaScript
+
+### Introducción a las Funciones
+
+Las funciones son bloques de código reutilizables que pueden ser llamados con un nombre y opcionalmente recibir argumentos para realizar tareas específicas.
+
+### Declaración de Funciones
+
+```jsx
+function saludar(nombre) {
+  console.log("¡Hola, " + nombre + "!");
+}
+```
+
+### Llamada de Funciones
+
+```jsx
+saludar("Juan"); // Imprime: ¡Hola, Juan!
+```
+
+### Parámetros y Argumentos
+
+Las funciones pueden recibir parámetros (variables) que actúan como marcadores de posición para los valores que se les pasan al llamar la función.
+
+```jsx
+function sumar(a, b) {
+  return a + b;
+}
+
+const resultado = sumar(3, 5); // resultado es 8
+```
+
+### Valores de Retorno
+
+Las funciones pueden devolver valores utilizando la palabra clave **return**.
+
+```jsx
+function multiplicar(x, y) {
+  return x * y;
+}
+
+const producto = multiplicar(4, 6); // producto es 24
+```
+
+### Funciones Anónimas
+
+Las funciones anónimas no tienen nombre y se asignan a variables o se pasan como argumentos a otras funciones.
+
+```jsx
+const saludar = function (nombre) {
+  console.log("¡Hola, " + nombre + "!");
+};
+```
+
+### Funciones de Flecha (Arrow Functions)
+
+Las funciones de flecha son una sintaxis más concisa para definir funciones.
+
+```jsx
+const restar = (a, b) => a - b;
+```
+
+### Ámbito de las Variables
+
+Las variables declaradas dentro de una función tienen un ámbito local y solo son visibles dentro de esa función.
+
+```jsx
+function imprimirMensaje() {
+  const mensaje = "Hola desde la función";
+  console.log(mensaje);
+}
+
+imprimirMensaje(); // Imprime: Hola desde la función
+console.log(mensaje); // Generará un error
+```
+
+### Funciones como Parámetros
+
+Las funciones pueden ser pasadas como argumentos a otras funciones.
+
+```jsx
+function ejecutarOperacion(func, a, b) {
+  return func(a, b);
+}
+
+const resultado = ejecutarOperacion(sumar, 10, 5); // resultado es 15
+```
+
+### Cierre (Closures)
+
+Los closures permiten que una función acceda a variables de su ámbito externo incluso después de que esa función haya terminado de ejecutarse.
+
+```jsx
+function contador() {
+  let contador = 0;
+  return function () {
+    contador++;
+    console.log(contador);
+  };
+}
+
+const incrementar = contador();
+incrementar(); // Imprime: 1
+incrementar(); // Imprime: 2
+```
+
+## Programación Orientada a Objetos en JavaScript
+
+### Introducción a la Programación Orientada a Objetos (POO)
+
+La Programación Orientada a Objetos es un paradigma de programación que se basa en el concepto de objetos. Un objeto es una entidad que contiene datos y métodos, y se utiliza para modelar conceptos del mundo real de manera más eficiente en el código.
+
+## Clases y Objetos
+
+### Clases
+
+```jsx
+class Persona {
+  constructor(nombre, edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+
+  saludar() {
+    console.log(`Hola, soy ${this.nombre} y tengo ${this.edad} años.`);
+  }
+}
+```
+
+### Creación de Objetos
+
+Los objetos son instancias de una clase. Se crean utilizando el constructor de la clase.
+
+```jsx
+const persona1 = new Persona("Juan", 30);
+const persona2 = new Persona("María", 25);
+
+persona1.saludar(); // Imprime: Hola, soy Juan y tengo 30 años.
+persona2.saludar(); // Imprime: Hola, soy María y tengo 25 años.
+```
+
+## Propiedades y Métodos
+
+### Propiedades
+
+Las propiedades son variables que pertenecen a un objeto y almacenan sus datos.
+
+```jsx
+class Rectangulo {
+  constructor(ancho, alto) {
+    this.ancho = ancho;
+    this.alto = alto;
+  }
+
+  calcularArea() {
+    return this.ancho * this.alto;
+  }
+}
+
+const rectangulo = new Rectangulo(10, 5);
+console.log("Área:", rectangulo.calcularArea()); // Imprime: Área: 50
+```
+
+### Métodos
+
+Los métodos son funciones asociadas a un objeto que realizan operaciones sobre sus datos.
+
+```jsx
+class Coche {
+  constructor(marca, modelo) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.encendido = false;
+  }
+
+  encender() {
+    this.encendido = true;
+    console.log("El coche está encendido.");
+  }
+
+  apagar() {
+    this.encendido = false;
+    console.log("El coche está apagado.");
+  }
+}
+
+const miCoche = new Coche("Toyota", "Corolla");
+miCoche.encender(); // Imprime: El coche está encendido.
+miCoche.apagar(); // Imprime: El coche está apagado.
+```
+
+## Herencia y Polimorfismo
+
+### Herencia
+
+La herencia permite que una clase (subclase) herede propiedades y métodos de otra clase (superclase).
+
+```jsx
+class Animal {
+  constructor(nombre) {
+    this.nombre = nombre;
+  }
+
+  sonido() {
+    console.log("Hace un sonido indefinido.");
+  }
+}
+
+class Perro extends Animal {
+  sonido() {
+    console.log("Hace un ladrido.");
+  }
+}
+
+const miPerro = new Perro("Buddy");
+miPerro.sonido(); // Imprime: Hace un ladrido.
+```
+
+### Polimorfismo
+
+El polimorfismo permite que objetos de diferentes clases respondan a la misma interfaz de manera diferente.
+
+```jsx
+class Figura {
+  calcularArea() {
+    console.log("Área indefinida.");
+  }
+}
+
+class Circulo extends Figura {
+  constructor(radio) {
+    super();
+    this.radio = radio;
+  }
+
+  calcularArea() {
+    return Math.PI * this.radio * this.radio;
+  }
+}
+
+class Cuadrado extends Figura {
+  constructor(lado) {
+    super();
+    this.lado = lado;
+  }
+
+  calcularArea() {
+    return this.lado * this.lado;
+  }
+}
+
+const circulo = new Circulo(5);
+const cuadrado = new Cuadrado(4);
+console.log("Área del círculo:", circulo.calcularArea());
+// Imprime: Área del círculo: 78.53981633974483
+console.log("Área del cuadrado:", cuadrado.calcularArea());
+// Imprime: Área del cuadrado: 16
+```
+
+## Métodos de cadenas en JavaScript
+
+### 1. concat()
+
+Concatena dos o más cadenas y devuelve una nueva cadena.
+
+Ejemplo:
+
+```jsx
+let str1 = "Hola";
+let str2 = "Mundo";
+let str3 = str1.concat(" ", str2);
+console.log(str3); // "Hola Mundo"
+```
+
+### 2. slice()
+
+Extrae una sección de una cadena y devuelve una nueva cadena.
+
+Ejemplo:
+
+```jsx
+let str = "Hola Mundo";
+let subStr = str.slice(0, 4);
+console.log(subStr); // "Hola"
+```
+
+### 3. substr()
+
+Extrae una sección de una cadena comenzando desde el índice especificado y devuelve una nueva cadena.
+
+Ejemplo:
+
+```jsx
+let str = "Hola Mundo";
+let subStr = str.substr(5, 5);
+console.log(subStr); // "Mundo"
+```
+
+### 4. toLowerCase()
+
+Convierte una cadena a minúsculas y devuelve una nueva cadena.
+
+Ejemplo:
+
+```jsx
+let str = "HOLA MUNDO";
+let lowerStr = str.toLowerCase();
+console.log(lowerStr); // "hola mundo"
+```
+
+### 5. toUpperCase()
+
+Convierte una cadena a mayúsculas y devuelve una nueva cadena.
+
+Ejemplo:
+
+```jsx
+let str = "hola mundo";
+let upperStr = str.toUpperCase();
+console.log(upperStr); // "HOLA MUNDO"
+```
+
+### 6. trim()
+
+Elimina los espacios en blanco al principio y al final de una cadena y devuelve una nueva cadena.
+
+Ejemplo:
+
+```jsx
+let str = "    Hola Mundo    ";
+let trimmedStr = str.trim();
+console.log(trimmedStr); // "Hola Mundo"
+```
+
+### 7. replace()
+
+Reemplaza una parte de una cadena con otra y devuelve una nueva cadena.
+
+Ejemplo:
+
+```jsx
+let str = "Hola Mundo";
+let newStr = str.replace("Mundo", "Amigo");
+console.log(newStr); // "Hola Amigo"
+```
+
+### 8. indexOf()
+
+Devuelve el índice de la primera aparición de una subcadena en una cadena.
+
+Ejemplo:
+
+```jsx
+let str = "Hola Mundo";
+let index = str.indexOf("Mundo");
+console.log(index); // 5
+```
+
+### 9. lastIndexOf()
+
+Devuelve el índice de la última aparición de una subcadena en una cadena.
+
+Ejemplo:
+
+```jsx
+let str = "Hola Mundo, Hola Amigo";
+let index = str.lastIndexOf("Hola");
+console.log(index); // 12
+```
+
+### 10. charAt()
+
+Devuelve el carácter en el índice especificado de una cadena.
+
+Ejemplo:
+
+```jsx
+let str = "Hola Mundo";
+let char = str.charAt(0);
+console.log(char); // "H"
+```
+
+### 11. split()
+
+Divide una cadena en un array de subcadenas y devuelve el array.
+
+Ejemplo:
+
+```jsx
+let str = "Hola,Mundo,Amigo";
+let arr = str.split(",");
+console.log(arr); // ["Hola", "Mundo", "Amigo"]
+```
+
+## Métodos de arrays en JavaScript
+
+### 1. concat()
+
+Combina dos o más arrays y devuelve un nuevo array.
+
+Ejemplo:
+
+```jsx
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+let arr3 = arr1.concat(arr2);
+console.log(arr3); // [1, 2, 3, 4, 5, 6]
+```
+
+### 2. push()
+
+Agrega uno o más elementos al final de un array.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3];
+arr.push(4);
+console.log(arr); // [1, 2, 3, 4]
+```
+
+### 3. pop()
+
+Elimina el último elemento de un array y lo devuelve.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3];
+let lastElement = arr.pop();
+console.log(lastElement); // 3
+console.log(arr); // [1, 2]
+```
+
+### 4. shift()
+
+Elimina el primer elemento de un array y lo devuelve.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3];
+let firstElement = arr.shift();
+console.log(firstElement); // 1
+console.log(arr); // [2, 3]
+```
+
+### 5. unshift()
+
+Agrega uno o más elementos al inicio de un array.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3];
+arr.unshift(0);
+console.log(arr); // [0, 1, 2, 3]
+```
+
+### 6. slice()
+
+Devuelve una sección de un array como un nuevo array.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3, 4, 5];
+let slicedArr = arr.slice(1, 4);
+console.log(slicedArr); // [2, 3, 4]
+```
+
+### 7. splice()
+
+Agrega y/o elimina elementos de un array.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3, 4, 5];
+arr.splice(2, 1, "a", "b");
+console.log(arr); // [1, 2, "a", "b", 4, 5]
+```
+
+### 8. reverse()
+
+Invierte el orden de los elementos de un array.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3, 4, 5];
+arr.reverse();
+console.log(arr); // [5, 4, 3, 2, 1]
+```
+
+### 9. join()
+
+Une todos los elementos de un array en una cadena y devuelve la cadena.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3];
+let str = arr.join("-");
+console.log(str); // "1-2-3"
+```
+
+### 10. sort()
+
+Ordena los elementos de un array.
+
+Ejemplo:
+
+```jsx
+let arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3];
+arr.sort();
+console.log(arr); // [1, 1, 2, 3, 3, 4, 5, 5, 6, 9]
+```
+
+### 11. filter()
+
+Crea un nuevo array con todos los elementos que pasan la prueba implementada por la función proporcionada.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3, 4, 5];
+let filteredArr = arr.filter((num) => num % 2 === 0);
+console.log(filteredArr); // [2, 4]
+```
+
+### 12. map()
+
+Crea un nuevo array con los resultados de la llamada a la función proporcionada en cada elemento del array original.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3, 4, 5];
+let mappedArr = arr.map((num) => num * 2);
+console.log(mappedArr); // [2, 4, 6, 8, 10]
+```
+
+### 13. reduce()
+
+Aplica una función acumulativa a cada elemento de un array y devuelve un único valor resultante.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3, 4, 5];
+let sum = arr.reduce((total, num) => total + num);
+console.log(sum); // 15
+```
+
+### 14. forEach()
+
+Ejecuta una función proporcionada una vez por cada elemento del array.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 2, 3];
+arr.forEach((num) => console.log(num));
+```
+
+### 15. every()
+
+Comprueba si todos los elementos de un array pasan la prueba implementada por la función proporcionada.
+
+Ejemplo:
+
+```jsx
+let arr = [2, 4, 6, 8];
+let areAllEven = arr.every((num) => num % 2 === 0);
+console.log(areAllEven); // true
+```
+
+### 16. some()
+
+Comprueba si al menos un elemento de un array pasa la prueba implementada por la función proporcionada.
+
+Ejemplo:
+
+```jsx
+let arr = [1, 3, 5, 7];
+let hasAnEvenNumber = arr.some((num) => num % 2 === 0);
+console.log(hasAnEvenNumber); // false
+```
+
+## Método Math en JavaScript
+
+El objeto Math en JavaScript proporciona propiedades y métodos para realizar cálculos matemáticos en JavaScript.
+
+A continuación se presentan algunos ejemplos de métodos disponibles en el objeto Math:
+
+### 1. Math.abs()
+
+Devuelve el valor absoluto de un número.
+
+Ejemplo:
+
+```jsx
+let num = -10;
+let absNum = Math.abs(num);
+console.log(absNum); // 10
+```
+
+### 2. Math.ceil()
+
+Rendondea un número hacia arriba al entero más cercano.
+
+Ejemplo:
+
+```jsx
+let num = 4.3;
+let roundedNum = Math.ceil(num);
+console.log(roundedNum); // 5
+```
+
+### 3. Math.floor()
+
+Rendondea un número hacia abajo al entero más cercano.
+
+Ejemplo:
+
+```jsx
+let num = 4.8;
+let roundedNum = Math.floor(num);
+console.log(roundedNum); // 4
+```
+
+### 4. Math.round()
+
+Rendondea un número al entero más cercano.
+
+Ejemplo:
+
+```jsx
+let num = 4.5;
+let roundedNum = Math.round(num);
+console.log(roundedNum); // 5
+```
+
+### 5. Math.max()
+
+Devuelve el número más grande de una lista de números.
+
+Ejemplo:
+
+```jsx
+let num1 = 10;
+let num2 = 5;
+let num3 = 8;
+let maxNum = Math.max(num1, num2, num3);
+console.log(maxNum); // 10
+```
+
+### 6. Math.min()
+
+Devuelve el número más pequeño de una lista de números.
+
+Ejemplo:
+
+```jsx
+let num1 = 10;
+let num2 = 5;
+let num3 = 8;
+let minNum = Math.min(num1, num2, num3);
+console.log(minNum); // 5
+```
+
+### 7. Math.pow()
+
+Devuelve el resultado de elevar un número a una potencia.
+
+Ejemplo:
+
+```jsx
+let base = 2;
+let exponent = 3;
+let result = Math.pow(base, exponent);
+console.log(result); // 8
+```
+
+### 8. Math.sqrt()
+
+Devuelve la raíz cuadrada de un número.
+
+Ejemplo:
+
+```jsx
+let num = 16;
+let sqrtNum = Math.sqrt(num);
+console.log(sqrtNum); // 4
+```
+
+### 9. Math.random()
+
+Devuelve un número aleatorio entre 0 y 1.
+
+Ejemplo:
+
+```jsx
+let randomNum = Math.random();
+console.log(randomNum); // 0.123456789 (ejemplo)
+```
+
+### 10. Math.PI
+
+Devuelve el valor de PI (3.141592653589793).
+
+Ejemplo:
+
+```jsx
+let circleRadius = 5;
+let circleArea = Math.PI * Math.pow(circleRadius, 2);
+console.log(circleArea); // 78.53981633974483
+```
+
+## Document Object Model (DOM) en JavaScript
+
+## Introducción al DOM
+
+El Document Object Model (DOM) es una representación en memoria de la estructura de un documento HTML/XML. Permite la manipulación y modificación de elementos y contenido de una página web mediante JavaScript.
+
+## Acceso a Elementos del DOM
+
+### Por Id
+
+```jsx
+const elemento = document.getElementById("mi-elemento");
+```
+
+### Por Clase
+
+```jsx
+const elementos = document.getElementsByClassName("mi-clase");
+```
+
+### Por Etiqueta
+
+```jsx
+const elementos = document.getElementsByTagName("div");
+```
+
+### Por Selector CSS
+
+```jsx
+const elemento = document.querySelector("#mi-elemento");
+const elementos = document.querySelectorAll(".mi-clase");
+```
+
+## Manipulación de Contenido y Estilo
+
+### Cambiar Texto
+
+```jsx
+elemento.textContent = "Nuevo texto";
+```
+
+### Cambiar HTML
+
+```jsx
+elemento.innerHTML = "<p>Nuevo párrafo</p>";
+```
+
+### Cambiar Estilo
+
+```jsx
+elemento.style.color = "blue";
+elemento.style.fontSize = "18px";
+```
+
+## Añadir y Eliminar Elementos
+
+### Crear Elemento
+
+```jsx
+const nuevoElemento = document.createElement("p");
+nuevoElemento.textContent = "Nuevo párrafo creado";
+```
+
+### Añadir Elemento
+
+```jsx
+padre.appendChild(nuevoElemento); // Añadir al final
+padre.insertBefore(nuevoElemento, referencia); // Insertar antes de un elemento
+```
+
+### Eliminar Elemento
+
+```jsx
+elemento.parentNode.removeChild(elemento);
+```
+
+## Eventos y Listeners
+
+### Agregar Event Listener
+
+```jsx
+elemento.addEventListener("click", function () {
+  console.log("Clic en el elemento");
+});
+```
+
+### Eliminar Event Listener
+
+```jsx
+elemento.removeEventListener("click", miFuncion);
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo DOM</title>
+  </head>
+  <body>
+    <button id="mi-boton">Haz clic</button>
+    <div id="resultado"></div>
+
+    <script>
+      const boton = document.getElementById("mi-boton");
+      const resultado = document.getElementById("resultado");
+
+      boton.addEventListener("click", function () {
+        resultado.textContent = "¡Botón clickeado!";
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Obtener y modificar elementos en JavaScript
+
+## Selección de elementos del DOM
+
+Para seleccionar un elemento del DOM en JavaScript, podemos utilizar la función querySelector(). Esta función toma como argumento un selector CSS y devuelve el primer elemento que coincide con el selector.
+
+```jsx
+const elemento = document.querySelector("#mi-elemento");
+```
+
+También podemos utilizar la función getElementById() para seleccionar un elemento por su ID:
+
+```jsx
+const elemento = document.getElementById("mi-elemento");
+```
+
+O la función getElementsByClassName() para seleccionar elementos por su clase:
+
+```jsx
+const elementos = document.getElementsByClassName("mi-clase");
+```
+
+## Modificación de elementos del DOM
+
+Para modificar un elemento del DOM en JavaScript, podemos utilizar las propiedades innerHTML y textContent.
+
+La propiedad innerHTML nos permite modificar el contenido HTML de un elemento:
+
+```jsx
+const elemento = document.querySelector("#mi-elemento");
+elemento.innerHTML = "<p>Nuevo contenido HTML</p>";
+```
+
+La propiedad textContent nos permite modificar el contenido de texto de un elemento:
+
+```jsx
+const elemento = document.querySelector("#mi-elemento");
+elemento.textContent = "Nuevo contenido de texto";
+```
+
+También podemos modificar los atributos de un elemento utilizando la función setAttribute():
+
+```jsx
+const elemento = document.querySelector("#mi-elemento");
+elemento.setAttribute("href", "<https://www.ejemplo.com>");
+```
+
+## Creación de elementos del DOM
+
+Para crear un nuevo elemento del DOM en JavaScript, podemos utilizar la función **createElement()**:
+
+```jsx
+const nuevoElemento = document.createElement("div");
+```
+
+También podemos agregar atributos y contenido a nuestro nuevo elemento utilizando las funciones **setAttribute()** y **textContent()**:
+
+```jsx
+nuevoElemento.setAttribute("class", "mi-clase");
+nuevoElemento.textContent = "Nuevo contenido";
+```
+
+Finalmente, podemos agregar nuestro nuevo elemento al DOM utilizando la función **appendChild()**:
+
+```jsx
+const contenedor = document.querySelector("#mi-contenedor");
+contenedor.appendChild(nuevoElemento);
+```
+
+## Métodos de Atributos de un Elemento en el DOM
+
+## Introducción a los Atributos
+
+Los atributos son propiedades que describen y modifican los elementos en el DOM. En JavaScript, puedes acceder y manipular los atributos de un elemento utilizando varios métodos.
+
+## getAttribute(nombre)
+
+El método **getAttribute(nombre)** se utiliza para obtener el valor de un atributo específico de un elemento.
+
+```jsx
+const enlace = document.getElementById("mi-enlace");
+const href = enlace.getAttribute("href");
+console.log("Valor del atributo href:", href);
+```
+
+## setAttribute(nombre, valor)
+
+El método **setAttribute(nombre, valor)** permite establecer un nuevo valor para un atributo de un elemento.
+
+```jsx
+const imagen = document.getElementById("mi-imagen");
+imagen.setAttribute("src", "nueva-imagen.jpg");
+```
+
+## hasAttribute(nombre)
+
+El método **hasAttribute(nombre)** verifica si un elemento tiene un atributo específico.
+
+```jsx
+const boton = document.getElementById("mi-boton");
+const tieneId = boton.hasAttribute("id");
+if (tieneId) {
+  console.log("El botón tiene el atributo id.");
+} else {
+  console.log("El botón no tiene el atributo id.");
+}
+```
+
+## removeAttribute(nombre)
+
+El método **removeAttribute(nombre)** elimina un atributo de un elemento.
+
+```jsx
+const parrafo = document.getElementById("mi-parrafo");
+parrafo.removeAttribute("class");
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Métodos de Atributos</title>
+  </head>
+  <body>
+    <a id="mi-enlace" href="https://www.ejemplo.com">Enlace de ejemplo</a>
+    <img id="mi-imagen" src="imagen.jpg" alt="Imagen de ejemplo" />
+    <button id="mi-boton" class="boton">Clic aquí</button>
+    <p id="mi-parrafo" class="resaltado">Este es un párrafo.</p>
+
+    <script>
+      const enlace = document.getElementById("mi-enlace");
+      const href = enlace.getAttribute("href");
+      console.log("Valor del atributo href:", href);
+
+      const imagen = document.getElementById("mi-imagen");
+      imagen.setAttribute("src", "nueva-imagen.jpg");
+
+      const boton = document.getElementById("mi-boton");
+      const tieneId = boton.hasAttribute("id");
+      if (tieneId) {
+        console.log("El botón tiene el atributo id.");
+      } else {
+        console.log("El botón no tiene el atributo id.");
+      }
+
+      const parrafo = document.getElementById("mi-parrafo");
+      parrafo.removeAttribute("class");
+    </script>
+  </body>
+</html>
+```
+
+## Atributos Globales en JavaScript
+
+## innerHTML
+
+La propiedad **innerHTML** permite acceder al contenido HTML interno de un elemento y también cambiarlo.
+
+```jsx
+const miParrafo = document.getElementById("mi-parrafo");
+console.log(miParrafo.innerHTML); // Obtener contenido
+miParrafo.innerHTML = "Nuevo contenido"; // Cambiar contenido
+```
+
+## innerText y textContent
+
+Tanto **innerText** como **textContent** se utilizan para acceder y cambiar el contenido de texto de un elemento.
+
+```jsx
+const miDiv = document.getElementById("mi-div");
+console.log(miDiv.innerText); // Obtener contenido de texto
+miDiv.textContent = "Nuevo texto"; // Cambiar contenido de texto
+```
+
+## classList
+
+La propiedad **classList** permite acceder y manipular las clases de estilo de un elemento.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+miElemento.classList.add("nueva-clase"); // Agregar clase
+miElemento.classList.remove("vieja-clase"); // Remover clase
+miElemento.classList.toggle("toggle-clase"); // Alternar clase
+```
+
+## style
+
+La propiedad style se utiliza para **acceder y modificar estilos en línea de un elemento**.
+
+```jsx
+const miEnlace = document.getElementById("mi-enlace");
+miEnlace.style.color = "blue"; // Cambiar color de texto
+miEnlace.style.fontSize = "16px"; // Cambiar tamaño de fuente
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Atributos Globales en JavaScript</title>
+  </head>
+  <body>
+    <div id="mi-div">Contenido div</div>
+    <p id="mi-parrafo">Contenido de párrafo</p>
+    <p id="mi-elemento" class="clase-inicial">Elemento con clase</p>
+    <script>
+      const miDiv = document.getElementById("mi-div");
+      console.log(miDiv.innerText); // Obtener contenido de texto
+
+      const miElemento = document.getElementById("mi-elemento");
+      miElemento.classList.add("nueva-clase"); // Agregar clase
+    </script>
+  </body>
+</html>
+```
+
+## Atributos de Inputs en JavaScript
+
+## Introducción a los Atributos de Inputs
+
+Los elementos <input type='text'/> son una parte fundamental de los formularios en HTML. Puedes acceder y manipular los atributos de estos elementos mediante JavaScript para obtener y modificar su comportamiento y apariencia.
+
+## value
+
+El atributo value se utiliza para **obtener o establecer el valor de un elemento** <input type='text'/>.
+
+```jsx
+const inputTexto = document.getElementById("input-texto");
+const valorTexto = inputTexto.value;
+inputTexto.value = "Nuevo valor";
+```
+
+## placeholder
+
+El atributo placeholder muestra un texto de ejemplo dentro del campo antes de que se ingrese cualquier valor.
+
+```jsx
+const inputNombre = document.getElementById("input-nombre");
+const placeholderActual = inputNombre.placeholder;
+inputNombre.placeholder = "Ingrese su nombre";
+```
+
+## disabled
+
+El atributo disabled deshabilita la interacción con un elemento <input/>.
+
+```jsx
+const inputHabilitado = document.getElementById("input-habilitado");
+inputHabilitado.disabled = true; // Deshabilitar el input
+inputHabilitado.disabled = false; // Habilitar el input
+```
+
+## readonly
+
+El atributo readonly permite que un campo de entrada solo se pueda leer, pero no modificar.
+
+```jsx
+const inputEditable = document.getElementById("input-editable");
+inputEditable.readOnly = true; // Hacerlo de solo lectura
+inputEditable.readOnly = false; // Habilitar la edición
+```
+
+## type
+
+El atributo type define el tipo de campo de entrada, como **text**, **password**, **email**, **number**, entre otros.
+
+```jsx
+const inputTipo = document.getElementById("input-tipo");
+const tipoActual = inputTipo.type;
+inputTipo.type = "email"; // Cambiar el tipo de campo
+```
+
+## checked
+
+El atributo checked se utiliza en los campos de tipo **checkbox** y **radio** para indicar si están seleccionados.
+
+```jsx
+const checkbox = document.getElementById("mi-checkbox");
+const estaSeleccionado = checkbox.checked;
+checkbox.checked = true; // Marcar el checkbox
+```
+
+## max y min
+
+Los atributos max y min se utilizan en los campos de tipo **number** para definir el rango máximo y mínimo de valores.
+
+```jsx
+const inputNumero = document.getElementById("input-numero");
+const valorMaximo = inputNumero.max;
+const valorMinimo = inputNumero.min;
+inputNumero.max = 100; // Cambiar el valor máximo
+inputNumero.min = 0; // Cambiar el valor mínimo
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Atributos de Inputs en JavaScript</title>
+  </head>
+  <body>
+    <input type="text" id="input-texto" value="Valor actual" />
+    <input type="text" id="input-nombre" placeholder="Escriba su nombre" />
+    <input type="text" id="input-habilitado" value="Habilitado" />
+    <input type="text" id="input-editable" value="Editable" />
+    <input type="text" id="input-tipo" value="Tipo actual" />
+    <input type="checkbox" id="mi-checkbox" checked />
+    <input type="number" id="input-numero" value="50" max="100" min="0" />
+
+    <script>
+      const inputTexto = document.getElementById("input-texto");
+      const valorTexto = inputTexto.value;
+
+      const inputNombre = document.getElementById("input-nombre");
+      inputNombre.placeholder = "Ingrese su nombre";
+
+      const inputHabilitado = document.getElementById("input-habilitado");
+      inputHabilitado.disabled = true;
+
+      const inputEditable = document.getElementById("input-editable");
+      inputEditable.readOnly = true;
+
+      const inputTipo = document.getElementById("input-tipo");
+      inputTipo.type = "email";
+
+      const checkbox = document.getElementById("mi-checkbox");
+      const estaSeleccionado = checkbox.checked;
+
+      const inputNumero = document.getElementById("input-numero");
+      inputNumero.max = 75;
+      inputNumero.min = 25;
+    </script>
+  </body>
+</html>
+```
+
+## Clases, classList y sus Métodos en JavaScript
+
+## Introducción a Clases y classList
+
+Las clases son una parte esencial de la manipulación de estilos y comportamiento en HTML y JavaScript. La propiedad **`classList`** permite acceder y manipular las clases de estilo de un elemento HTML.
+
+### Agregar una Clase
+
+El método **add()** de classList agrega una nueva clase a un elemento.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+miElemento.classList.add("nueva-clase");
+```
+
+### Remover una Clase
+
+El método **remove()** de classList elimina una clase existente de un elemento.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+miElemento.classList.remove("vieja-clase");
+```
+
+### Alternar una Clase
+
+El método **toggle()** de classList agrega o remueve una clase según su estado actual.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+miElemento.classList.toggle("clase-activa");
+```
+
+### Verificar si una Clase Existe
+
+El método **contains()** de classList verifica si un elemento tiene una clase específica.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+const tieneClase = miElemento.classList.contains("mi-clase");
+if (tieneClase) {
+  console.log("El elemento tiene la clase.");
+} else {
+  console.log("El elemento no tiene la clase.");
+}
+```
+
+### Reemplazar Clases
+
+El método **replace()** de classList reemplaza una clase con otra.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+miElemento.classList.replace("vieja-clase", "nueva-clase");
+```
+
+### Obtener Lista de Clases
+
+El método **toString()** de classList devuelve una cadena de texto con todas las clases del elemento.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+const clases = miElemento.classList.toString();
+console.log("Clases:", clases);
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clases y classList en JavaScript</title>
+    <style>
+      .nueva-clase {
+        color: blue;
+      }
+      .vieja-clase {
+        font-weight: bold;
+      }
+      .clase-activa {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mi-elemento" class="mi-clase vieja-clase">Elemento con clases</div>
+    <button id="agregar">Agregar Clase</button>
+    <button id="remover">Remover Clase</button>
+    <button id="alternar">Alternar Clase</button>
+    <button id="verificar">Verificar Clase</button>
+    <button id="reemplazar">Reemplazar Clase</button>
+    <button id="obtener">Obtener Clases</button>
+
+    <script>
+      const miElemento = document.getElementById("mi-elemento");
+      const botonAgregar = document.getElementById("agregar");
+      const botonRemover = document.getElementById("remover");
+      const botonAlternar = document.getElementById("alternar");
+      const botonVerificar = document.getElementById("verificar");
+      const botonReemplazar = document.getElementById("reemplazar");
+      const botonObtener = document.getElementById("obtener");
+
+      botonAgregar.addEventListener("click", function () {
+        miElemento.classList.add("nueva-clase");
+      });
+
+      botonRemover.addEventListener("click", function () {
+        miElemento.classList.remove("vieja-clase");
+      });
+
+      botonAlternar.addEventListener("click", function () {
+        miElemento.classList.toggle("clase-activa");
+      });
+
+      botonVerificar.addEventListener("click", function () {
+        const tieneClase = miElemento.classList.contains("mi-clase");
+        if (tieneClase) {
+          console.log("El elemento tiene la clase.");
+        } else {
+          console.log("El elemento no tiene la clase.");
+        }
+      });
+
+      botonReemplazar.addEventListener("click", function () {
+        miElemento.classList.replace("vieja-clase", "nueva-clase");
+      });
+
+      botonObtener.addEventListener("click", function () {
+        const clases = miElemento.classList.toString();
+        console.log("Clases:", clases);
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Obtención y Modificación de Childs en JavaScript
+
+## Introducción a Childs
+
+Los nodos hijos, también conocidos como "childs", son los elementos o nodos que están directamente contenidos dentro de otro elemento en el DOM. Puedes acceder y manipular los hijos de un elemento utilizando varias propiedades y métodos.
+
+## Obtener Nodos Hijos
+
+### childNodes
+
+La propiedad childNodes devuelve una lista de todos los nodos hijos de un elemento, incluyendo nodos de texto y comentarios.
+
+```jsx
+const contenedor = document.getElementById("mi-contenedor");
+const hijos = contenedor.childNodes;
+```
+
+### children
+
+La propiedad children devuelve una lista de todos los elementos hijos de un elemento, excluyendo nodos de texto y comentarios.
+
+```jsx
+const contenedor = document.getElementById("mi-contenedor");
+const elementosHijos = contenedor.children;
+```
+
+### firstChild y lastChild
+
+Las propiedades firstChild y lastChild devuelven el primer y último nodo hijo, respectivamente.
+
+```jsx
+const contenedor = document.getElementById("mi-contenedor");
+const primerHijo = contenedor.firstChild;
+const ultimoHijo = contenedor.lastChild;
+```
+
+## Modificar Nodos Hijos
+
+### appendChild
+
+El método **appendChild()** agrega un nuevo nodo hijo al final de la lista de nodos hijos de un elemento.
+
+```jsx
+const contenedor = document.getElementById("mi-contenedor");
+const nuevoElemento = document.createElement("p");
+nuevoElemento.textContent = "Nuevo párrafo";
+contenedor.appendChild(nuevoElemento);
+```
+
+### removeChild
+
+El método **removeChild()** elimina un nodo hijo específico de un elemento.
+
+```jsx
+const contenedor = document.getElementById("mi-contenedor");
+const elementoAEliminar = contenedor.firstChild;
+contenedor.removeChild(elementoAEliminar);
+```
+
+### replaceChild
+
+El método **replaceChild()** reemplaza un nodo hijo con otro nuevo.
+
+```jsx
+const contenedor = document.getElementById("mi-contenedor");
+const nuevoElemento = document.createElement("div");
+nuevoElemento.textContent = "Nuevo contenido";
+const elementoAReemplazar = contenedor.firstChild;
+contenedor.replaceChild(nuevoElemento, elementoAReemplazar);
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Obtención y Modificación de Childs en JavaScript</title>
+  </head>
+  <body>
+    <div id="mi-contenedor">
+      <p>Primer párrafo</p>
+      <p>Segundo párrafo</p>
+      <p>Tercer párrafo</p>
+    </div>
+    <button id="agregar">Agregar Párrafo</button>
+    <button id="eliminar">Eliminar Primer Párrafo</button>
+
+    <script>
+      const contenedor = document.getElementById("mi-contenedor");
+      const botonAgregar = document.getElementById("agregar");
+      const botonEliminar = document.getElementById("eliminar");
+
+      botonAgregar.addEventListener("click", function () {
+        const nuevoParrafo = document.createElement("p");
+        nuevoParrafo.textContent = "Nuevo párrafo agregado";
+        contenedor.appendChild(nuevoParrafo);
+      });
+
+      botonEliminar.addEventListener("click", function () {
+        const primerParrafo = contenedor.firstChild;
+        contenedor.removeChild(primerParrafo);
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Métodos de Childs en JavaScript
+
+## Introducción a los Métodos de Childs
+
+Los métodos que te presentaré a continuación son útiles para manipular y trabajar con los nodos hijos de un elemento en el DOM (Document Object Model).
+
+## appendChild()
+
+El método **appendChild()** permite agregar un nuevo nodo hijo al final de la lista de nodos hijos de un elemento.
+
+```jsx
+const contenedor = document.getElementById("mi-contenedor");
+const nuevoParrafo = document.createElement("p");
+nuevoParrafo.textContent = "Nuevo párrafo";
+contenedor.appendChild(nuevoParrafo);
+```
+
+## removeChild()
+
+El método **removeChild()** se utiliza para eliminar un nodo hijo específico de un elemento.
+
+```jsx
+const contenedor = document.getElementById("mi-contenedor");
+const primerParrafo = contenedor.firstChild;
+contenedor.removeChild(primerParrafo);
+```
+
+## replaceChild()
+
+El método **replaceChild()** permite reemplazar un nodo hijo existente por otro nuevo.
+
+```jsx
+const contenedor = document.getElementById("mi-contenedor");
+const nuevoParrafo = document.createElement("p");
+nuevoParrafo.textContent = "Texto reemplazado";
+const primerParrafo = contenedor.firstChild;
+contenedor.replaceChild(nuevoParrafo, primerParrafo);
+```
+
+## insertBefore()
+
+El método **insertBefore()** permite insertar un nuevo nodo hijo antes de un nodo de referencia.
+
+```jsx
+const contenedor = document.getElementById("mi-contenedor");
+const nuevoParrafo = document.createElement("p");
+nuevoParrafo.textContent = "Nuevo párrafo";
+const referencia = contenedor.firstChild;
+contenedor.insertBefore(nuevoParrafo, referencia);
+```
+
+## cloneNode()
+
+El método **cloneNode()** crea una copia del nodo actual, ya sea con o sin sus nodos hijos.
+
+```jsx
+const original = document.getElementById("original");
+const copia = original.cloneNode(true); // Clonar con hijos
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Métodos de Childs en JavaScript</title>
+  </head>
+  <body>
+    <div id="mi-contenedor">
+      <p>Primer párrafo</p>
+      <p>Segundo párrafo</p>
+    </div>
+    <button id="agregar">Agregar Párrafo</button>
+    <button id="eliminar">Eliminar Primer Párrafo</button>
+    <button id="reemplazar">Reemplazar Primer Párrafo</button>
+    <button id="insertar">Insertar Párrafo</button>
+
+    <script>
+      const contenedor = document.getElementById("mi-contenedor");
+      const botonAgregar = document.getElementById("agregar");
+      const botonEliminar = document.getElementById("eliminar");
+      const botonReemplazar = document.getElementById("reemplazar");
+      const botonInsertar = document.getElementById("insertar");
+
+      botonAgregar.addEventListener("click", function () {
+        const nuevoParrafo = document.createElement("p");
+        nuevoParrafo.textContent = "Nuevo párrafo";
+        contenedor.appendChild(nuevoParrafo);
+      });
+
+      botonEliminar.addEventListener("click", function () {
+        const primerParrafo = contenedor.firstChild;
+        contenedor.removeChild(primerParrafo);
+      });
+
+      botonReemplazar.addEventListener("click", function () {
+        const nuevoParrafo = document.createElement("p");
+        nuevoParrafo.textContent = "Texto reemplazado";
+        const primerParrafo = contenedor.firstChild;
+        contenedor.replaceChild(nuevoParrafo, primerParrafo);
+      });
+
+      botonInsertar.addEventListener("click", function () {
+        const nuevoParrafo = document.createElement("p");
+        nuevoParrafo.textContent = "Nuevo párrafo insertado";
+        const referencia = contenedor.firstChild;
+        contenedor.insertBefore(nuevoParrafo, referencia);
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Propiedades de Padres en JavaScript
+
+## Introducción a las Propiedades de Padres
+
+Las propiedades que te presentaré a continuación son útiles para acceder y trabajar con los elementos padres de un nodo en el DOM (Document Object Model).
+
+### parentNode
+
+La propiedad **parentNode** devuelve el nodo padre del elemento actual.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+const padre = miElemento.parentNode;
+```
+
+### parentElement
+
+La propiedad **parentElement** es similar a **parentNode**, pero devuelve el elemento padre directo.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+const padre = miElemento.parentElement;
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Propiedades de Padres en JavaScript</title>
+  </head>
+  <body>
+    <div id="contenedor">
+      <p id="mi-elemento">Este es un párrafo</p>
+    </div>
+    <button id="mostrar-padre">Mostrar Padre</button>
+
+    <script>
+      const miElemento = document.getElementById("mi-elemento");
+      const botonMostrarPadre = document.getElementById("mostrar-padre");
+
+      botonMostrarPadre.addEventListener("click", function () {
+        const padre = miElemento.parentElement;
+        if (padre) {
+          alert("El padre del párrafo es un " + padre.tagName);
+        } else {
+          alert("El párrafo no tiene un padre.");
+        }
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Propiedades de Hermanos en JavaScript
+
+## Introducción a las Propiedades de Hermanos
+
+Las propiedades que te presentaré a continuación son útiles para acceder y trabajar con los elementos hermanos (nodos en el mismo nivel) de un nodo en el DOM (Document Object Model).
+
+## previousSibling
+
+La propiedad **previousSibling** devuelve el nodo hermano anterior (anterior en el mismo nivel) al elemento actual.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+const hermanoAnterior = miElemento.previousSibling;
+```
+
+## nextSibling
+
+La propiedad **nextSibling** devuelve el nodo hermano siguiente (siguiente en el mismo nivel) al elemento actual.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+const hermanoSiguiente = miElemento.nextSibling;
+```
+
+## previousElementSibling
+
+La propiedad **previousElementSibling** es similar a **previousSibling**, pero devuelve el elemento hermano anterior (anterior en el mismo nivel).
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+const hermanoAnterior = miElemento.previousElementSibling;
+```
+
+## nextElementSibling
+
+La propiedad **nextElementSibling** es similar a **nextSibling**, pero devuelve el elemento hermano siguiente (siguiente en el mismo nivel).
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+const hermanoSiguiente = miElemento.nextElementSibling;
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Propiedades de Hermanos en JavaScript</title>
+  </head>
+  <body>
+    <div id="contenedor">
+      <p>Primer párrafo</p>
+      <p id="mi-elemento">Este es el párrafo seleccionado</p>
+      <p>Último párrafo</p>
+    </div>
+    <button id="mostrar-hermano-anterior">Mostrar Hermano Anterior</button>
+    <button id="mostrar-hermano-siguiente">Mostrar Hermano Siguiente</button>
+
+    <script>
+      const miElemento = document.getElementById("mi-elemento");
+      const botonMostrarHermanoAnterior = document.getElementById(
+        "mostrar-hermano-anterior"
+      );
+      const botonMostrarHermanoSiguiente = document.getElementById(
+        "mostrar-hermano-siguiente"
+      );
+
+      botonMostrarHermanoAnterior.addEventListener("click", function () {
+        const hermanoAnterior = miElemento.previousElementSibling;
+        if (hermanoAnterior) {
+          alert("El hermano anterior es un " + hermanoAnterior.tagName);
+        } else {
+          alert("No hay un hermano anterior.");
+        }
+      });
+
+      botonMostrarHermanoSiguiente.addEventListener("click", function () {
+        const hermanoSiguiente = miElemento.nextElementSibling;
+        if (hermanoSiguiente) {
+          alert("El hermano siguiente es un " + hermanoSiguiente.tagName);
+        } else {
+          alert("No hay un hermano siguiente.");
+        }
+      });
+    </script>
+  </body>
+</html>
+```
+
+## Nodos y Propiedad nodeName en JavaScript
+
+## Introducción a los Nodos y nodeName
+
+En el DOM (Document Object Model), los nodos son los elementos fundamentales que componen la estructura de un documento HTML. Cada nodo tiene un tipo, y para acceder a este tipo, puedes utilizar la propiedad **`nodeName`**.
+
+### Tipos de Nodos
+
+> Los tipos de nodos comunes incluyen:
+
+- **Element Node (Nodo de Elemento):** Representa un elemento HTML, como <p></p> o <div></div>.
+- **Text Node (Nodo de Texto):** Contiene el contenido de texto dentro de un elemento, como "Hola".
+- **Comment Node (Nodo de Comentario):** Representa comentarios dentro del código HTML.
+- **Document Node (Nodo de Documento):** Representa todo el documento HTML.
+
+## nodeName
+
+La propiedad **nodeName** devuelve el nombre del tipo de nodo en mayúsculas.
+
+```jsx
+const miElemento = document.getElementById("mi-elemento");
+console.log(miElemento.nodeName); // Devuelve el nombre del tipo de nodo
+```
+
+### Ejemplo Completo
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nodos y Propiedad nodeName en JavaScript</title>
+  </head>
+  <body>
+    <div id="mi-div">Este es un div</div>
+    <p id="mi-parrafo">Este es un párrafo</p>
+    <!-- Comentario -->
+    <script>
+      const miDiv = document.getElementById("mi-div");
+      const miParrafo = document.getElementById("mi-parrafo");
+
+      console.log("Tipo de nodo para miDiv:", miDiv.nodeName);
+      console.log("Tipo de nodo para miParrafo:", miParrafo.nodeName);
+    </script>
+  </body>
+</html>
+```

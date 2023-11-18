@@ -1,0 +1,68 @@
+---
+import { LuGithub } from "react-icons/Lu";
+import { AiFillHome } from "react-icons/Ai";
+import { BsBookFill } from "react-icons/Bs";
+
+const INITIAL_NETWORK = [
+  {
+    name: "Inicio",
+    url: "/",
+    icon: AiFillHome,
+  },
+  {
+    name: "Github",
+    url: "https://github.com/OmegaTroy",
+    icon: LuGithub,
+  },
+  {
+    name: "Blog",
+    url: "/blog",
+    icon: BsBookFill,
+  },
+];
+---
+
+<nav class="fixed z-40 w-full h-20 mt-3 flex justify-center items-center">
+  <ul
+    class="flex bg-gradi_dark border-2 backdrop-blur border-FL rounded-lg px-4 gap-4 lg:gap-10"
+  >
+    {
+      INITIAL_NETWORK.map((link) => (
+        <li class="list relative flex w-[70px] h-[70px] z-10">
+          <a
+            href={link.url}
+            class="relative flex justify-center w-full items-center flex-col text-center font-medium"
+          >
+            <span class="icon text-gradi_dark2">{<link.icon />}</span>
+            <span class="text text-FX text-lg">{link.name}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+<style>
+  .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+  }
+  li:hover a .icon {
+    transform: translateY(-25px) scale(1.5);
+  }
+  .text {
+    position: absolute;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  li:hover a .text {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+</style>

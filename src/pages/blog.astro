@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+const allPosts = await Astro.glob("../pages/blog/*.mdx");
+const posts = allPosts.map((post) => post.frontmatter);
+---
+
+<Layout title="Blog">
+  <h1 class="text-5xl font-bold py-4">
+    Escribiendo sobre programación y hobbies.
+  </h1>
+  <article class="flex flex-col gap-4 border-l border-l-FL px-4">
+    {
+      posts.map((post) => (
+        <Card
+          url={post.url}
+          tag={post.tag}
+          title={post.title}
+          descripcion={post.descripcion}
+          data={post.data}
+          color={post.color}
+        />
+      ))
+    }
+  </article>
+</Layout>

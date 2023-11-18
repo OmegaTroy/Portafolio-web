@@ -1,0 +1,87 @@
+---
+import { FiLinkedin } from "react-icons/fi";
+import { FaArrowDown } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { HiOutlineMail } from "react-icons/hi";
+import { RiFilePaper2Line } from "react-icons/ri";
+import CardProjects from "./CardProjects.astro";
+import { Tecnologias } from "./Tecnologias";
+---
+
+<section class="w-full h-full flex mt-14 flex-col gap-20 mb-30 xl:mb-20">
+  <span class="text-5xl font-mplus font-bold text-newPalette5">
+    Creando Experiencias
+    <br />
+    <strong class="text-5xl font-mplus text-newPalette1">Alucinantes.</strong>
+  </span>
+  <aside>
+    <h2 class="text-3xl text-newPalette7">
+      Julián Iocco <span class="text-FX">&&</span> OmegaTroy
+    </h2>
+    <div
+      class="mt-4 inline-flex items-center px-2 py-1 text-xs font-semibold rounded-md pointer-events-auto border-gradi_light border"
+    >
+      <span class="mr-1.5 flex h-3 w-3 items-center">
+        <span
+          class="absolute inline-flex w-2 h-2 rounded-full opacity-75 animate-ping bg-lime-400"
+        ></span>
+        <span class="relative inline-flex w-2 h-2 rounded-full bg-newPalette5"
+        ></span>
+      </span>
+      <p class="text-light text-sm">Disponible para nuevos proyectos</p>
+    </div>
+    <ul class="flex py-4 gap-5 text-gradi_dark2">
+      <li class="text-2xl transition-all hover:scale-150">
+        <a
+          title="Linkedin"
+          href="https://www.linkedin.com/in/julian-iocco-579a90224/"
+          target="_blank"
+        >
+          <FiLinkedin />
+        </a>
+      </li>
+      <li class="text-2xl transition-all hover:scale-150">
+        <a title="X" href="https://twitter.com/OmegaTroy44" target="_blank">
+          <FaXTwitter />
+        </a>
+      </li>
+      <li class="text-2xl transition-all hover:scale-150">
+        <a title="Email" href="mailto:julianiocco85@gmail.com" target="_blank">
+          <HiOutlineMail />
+        </a>
+      </li>
+      <li class="text-2xl transition-all hover:scale-150">
+        <a
+          title="CV"
+          href="./Marcos-Julian-Orona-Iocco-CV.pdf"
+          download="Marcos-Julian-Orona-Iocco-CV.pdf"
+        >
+          <RiFilePaper2Line />
+        </a>
+      </li>
+    </ul>
+  </aside>
+</section>
+<article>
+  <h2 class="text-3xl font-bold font-mplus text-newPalette5 py-5">
+    Mi nombre es julian
+  </h2>
+  <p class="text-xl font-bold">
+    programador Front-end, diseños innovadores y de vanguardia. Mi objetivo es
+    crear experiencias únicas y memorables que hagan que tus usuarios se
+    enamoren de tu sitio web.
+  </p>
+  <div class="grid place-items-center">
+    <h3 class="text-3xl font-mplus font-bold mt-4 text-newPalette7">
+      Stack de tecnologias
+    </h3>
+    <p class="text-2xl py-5 text-gradi_dark2 text-center">Mover</p>
+    <FaArrowDown className="text-gradi_dark2" />
+    <Tecnologias client:load />
+  </div>
+</article>
+
+<h2 class="text-5xl mt-12 font-mplus font-bold text-newPalette6">Proyectos</h2>
+<article class="h-56 mt-32 lg:mt-[13.5rem] w-full flex flex-col">
+  <CardProjects />
+</article>
