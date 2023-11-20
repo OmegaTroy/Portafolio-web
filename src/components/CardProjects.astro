@@ -2,7 +2,9 @@
 import { proyectos } from "../../public/proyectos.json";
 ---
 
-<div class="card-container relative w-full flex justify-center items-center">
+<div
+  class="card-container hover:mt-[28rem] lg:hover:mt-0 relative w-full flex justify-center items-center"
+>
   {
     proyectos.map((proyecto) => (
       <a
@@ -47,7 +49,6 @@ import { proyectos } from "../../public/proyectos.json";
   }
 
   .card-container:hover .card__projects {
-    margin-top: 28rem;
     transform: rotate(calc(var(--i) * 5deg))
       translate(calc(var(--i) * 106px), -50px);
     color: rgba(0, 0, 0, 0.2);
