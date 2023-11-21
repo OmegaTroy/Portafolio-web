@@ -84,6 +84,30 @@ import { proyectos } from "../../public/proyectos.json";
       transform: rotate(calc(var(--i) * 5deg))
         translate(calc(var(--i) * 90px), -50px);
     }
+
+    .card-container:active .card__projects {
+      background: #333;
+    }
+    .card-container .card__projects:active {
+      translate: calc(var(--i) * 20px) -50px;
+      z-index: 100;
+      background: #5e5cfc;
+
+      & h3 {
+        color: black;
+      }
+      & p {
+        color: antiquewhite;
+      }
+      & .area {
+        margin: 5px 0 0 0;
+
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        color: #101010;
+        padding: 5px;
+      }
+    }
   }
 </style>
 
