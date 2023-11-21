@@ -10,11 +10,11 @@ import { proyectos } from "../../public/proyectos.json";
       <a
         href={proyecto.url}
         target="_blank"
-        class="card__projects"
+        class="card__projects text-Cuarto "
         style={proyecto.i}
       >
         <h3 class="text-2xl font-semibold">{proyecto.name}</h3>
-        <p>{proyecto.description}</p>
+        <p class="text-white">{proyecto.description}</p>
       </a>
     ))
   }
@@ -41,7 +41,6 @@ import { proyectos } from "../../public/proyectos.json";
     font-size: 18px;
     border: 10px solid rgba(0, 0, 0, 0.1);
     transform-origin: 671% -257%;
-    color: rgba(0, 0, 0, 0.1);
     transition: 0.5s;
     filter: hue-rotate(calc(var(--i) * 50deg));
     cursor: pointer;
@@ -51,23 +50,21 @@ import { proyectos } from "../../public/proyectos.json";
   .card-container:hover .card__projects {
     transform: rotate(calc(var(--i) * 5deg))
       translate(calc(var(--i) * 106px), -50px);
-    color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
   }
 
-  .card-container:active .card__projects {
+  .card-container:hover .card__projects {
     background: #333;
+    & p {
+      color: rgba(255, 255, 255, 0.1);
+    }
   }
-  .card-container .card__projects:active {
+  .card-container .card__projects:hover {
     translate: calc(var(--i) * 20px) -50px;
     z-index: 100;
     background: #5e5cfc;
-
-    & h3 {
-      color: black;
-    }
     & p {
-      color: antiquewhite;
+      color: white;
     }
     & .area {
       margin: 5px 0 0 0;
