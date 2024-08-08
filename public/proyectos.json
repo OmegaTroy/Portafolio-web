@@ -3,12 +3,12 @@
     "name": "Barber page",
     "description": "una landing page para una barberia",
     "url": "https://barber-page-sable.vercel.app/",
-    "img": "--img: url(63shots_so.jpeg)"
+    "img": "--img: url(448shots_so.jpeg)"
   },
   {
     "name": "Municipalidad de Campana",
     "description": "es un re diseño de la pagina de Municipalidad de Campana",
     "url": "https://main--benevolent-starlight-20a533.netlify.app/",
-    "img": "--img: url(448shots_so.jpeg)"
+    "img": "--img: url(247shots_so.jpeg)"
   }
 ]}
