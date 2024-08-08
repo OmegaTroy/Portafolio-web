@@ -1,5 +1,6 @@
 ---
 import NavBar from "../components/NavBar.astro";
+import Proyectos from "../components/Proyectos.astro";
 interface Props {
   title: string;
 }
@@ -28,10 +29,14 @@ const { title } = Astro.props;
   >
     <NavBar />
     <main
-      class="max-w-4xl px-4 mx-auto min-h-screen pt-24 m-auto flex flex-col items-center"
+      class="max-w-4xl px-4 mx-auto m-auto min-h-screen pt-24 flex flex-col items-center relative"
     >
       <slot />
     </main>
+    <section class="relative overflow-hidden w-full h-screen flex justify-center mt-20">
+  <h2 class="text-newPalette7 text-4xl font-mplus font-semibold">Mis Proyectos</h2>
+      <Proyectos/>
+    </section>
   </body>
 </html>
 <style is:global>
@@ -42,6 +47,7 @@ const { title } = Astro.props;
     box-sizing: border-box;
     font-family: sans-serif;
   }
+  
   body::before {
     position: absolute;
     z-index: -1;

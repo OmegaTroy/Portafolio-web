@@ -1,0 +1,167 @@
+---
+import { proyectos } from "../../public/proyectos.json";
+---
+<div class="container">
+  <div class="slider">
+    {
+      proyectos.map(proyecto=>(
+        <div class="slides" style={proyecto.img}>
+          <div class="content">
+          <h2>{proyecto.name}</h2>
+          <p>{proyecto.description}</p>
+            <a href={proyecto.url} target="_blank" class="bg-[#292929] border-2 border-[#3e3e3e] rounded-lg text-white px-6 py-3 text-base hover:border-[#fff] cursor-pointer transition">viste previa</a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div class="buttons">
+    <span class="prev"></span>
+    <span class="next"></span>
+  </div>
+</div>
+
+<style>
+
+.container{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.slider{
+  position: absolute;
+  inset: 80px 0px 0px 0px;
+  background: transparent;
+  border-radius: 20px;
+}
+
+.slider .slides{
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  width: 240px;
+  height: 320px;
+  border-radius: 20px;
+  background: var(--img);
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+  box-shadow: 0 25px 50px rgba(15, 15, 15, 0.589);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.slider .slides:nth-child(1),
+.slider .slides:nth-child(2){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(0);
+  background-size: cover;
+}
+.slider .slides:nth-child(3){
+  left: calc(50% + 240px);
+  background-size: cover;
+}
+.slider .slides:nth-child(4){
+  left: calc(50% + 500px);
+  background-size: cover;
+}
+.slider .slides:nth-child(5){
+  left: calc(50% + 760px);
+  background-size: cover;
+}
+.slider .slides:nth-child(6){
+  left: calc(50% + 1020px);
+  background-size: cover;
+}
+
+.buttons{
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  gap: 20px;
+}
+.buttons span{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #111;
+  border: 1px solid #fafafa;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.buttons span::before{
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-top: 4px solid #fff;
+  border-left: 4px solid #fff;
+  transform: rotate(315deg) translate(2px, 2px);
+}
+.buttons span:nth-child(2):before{
+  transform: rotate(135deg) translate(2px, 2px);
+}
+.buttons span:active{
+  opacity: 0.5;
+}
+
+.content{
+  position: relative;
+  width: 44%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background: rgba(15, 15, 15, 0.589);
+  backdrop-filter: blur(20px);
+  padding: 10px;
+  max-width: 600px;
+  transition: 0.25s;
+  transition-delay: 0s;
+  transform: translateY(40px);
+  z-index: 100000;
+  opacity: 0;
+  margin: 10px;
+}
+
+.content h2{
+  font-size: 2em;
+}
+
+.slider .slides:nth-child(1) .content,
+.slider .slides:nth-child(2) .content{
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.5s;
+}
+</style>
+
+<script>
+
+
+let next = document.querySelector('.next')
+let prev = document.querySelector('.prev')
+let slider = document.querySelector('.slider')
+prev.addEventListener('click',()=>{
+  let slides = document.querySelectorAll('.slides')
+  slider.appendChild(slides[0])
+})
+next.addEventListener('click',()=>{
+  let slides = document.querySelectorAll('.slides');
+  slider.prepend(slides[slides.length - 1]);
+})
+</script>

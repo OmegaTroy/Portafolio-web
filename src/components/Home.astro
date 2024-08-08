@@ -1,7 +1,5 @@
 ---
-import { RiFilePaper2Line } from "react-icons/ri";
-import CardProjects from "./CardProjects.astro";
-import { Tecnologias } from "./Tecnologias";
+import Proyectos from "./Proyectos.astro"
 ---
 
 <section class="w-full h-full flex mt-14 flex-col gap-20 mb-30 xl:mb-20">
@@ -98,7 +96,7 @@ import { Tecnologias } from "./Tecnologias";
     </ul>
   </aside>
 </section>
-<article>
+<article class="mt-10">
   <h2 class="text-3xl font-bold font-mplus text-newPalette5 py-5">
     Mi nombre es julian
   </h2>
@@ -107,15 +105,7 @@ import { Tecnologias } from "./Tecnologias";
     crear experiencias únicas y memorables que hagan que tus usuarios se
     enamoren de tu sitio web.
   </p>
-  <div class="grid place-items-center text-gradi_dark2">
-    <h1 class="text-3xl font-mplus font-bold mt-4 text-newPalette7">
-      Stack de tecnologias
-    </h1>
-    <Tecnologias client:load />
-  </div>
+
 </article>
 
-<h2 class="text-5xl mt-12 font-mplus font-bold text-newPalette6">Proyectos</h2>
-<article class="h-40 mt-48 lg:mt-[18rem] w-full flex flex-col">
-  <CardProjects />
-</article>
+

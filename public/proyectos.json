@@ -1,39 +1,14 @@
 {"proyectos":[
   {
-    "name": "Simple Javascript",
-    "description": "una practica de como manipular el Dom con javaScript",
-    "url": "https://simple-javascript.vercel.app/",
-    "i": "--i:-4"
-  },
-  {
     "name": "Barber page",
     "description": "una landing page para una barberia",
     "url": "https://barber-page-sable.vercel.app/",
-    "i": "--i:-3"
-  },
-  {
-    "name": "Rick y morty",
-    "description": "una pagina probando la api de rick and morty",
-    "url": "https://rick-and-morty-react-alpha.vercel.app/",
-    "i": "--i:-2"
+    "img": "--img: url(63shots_so.jpeg)"
   },
   {
     "name": "Municipalidad de Campana",
     "description": "es un re diseño de la pagina de Municipalidad de Campana",
     "url": "https://main--benevolent-starlight-20a533.netlify.app/",
-    "i": "--i:-1"
-
-  },
-  {
-    "name": "React task app",
-    "description": "es una app de tareas con react mas localStorage",
-    "url": "https://react-tasks-app-three.vercel.app/",
-    "i": "--i:0"
-  },
-  {
-    "name": "React colors",
-    "description": "es una app de que genera colores hexadecimales y rgb usando un contexto",
-    "url": "https://capable-banoffee-290265.netlify.app/",
-    "i": "--i:1"
+    "img": "--img: url(448shots_so.jpeg)"
   }
 ]}
