@@ -10,5 +10,11 @@
     "description": "Realizado como proyecto de fin de curso, un re diseño de la pagina de Municipalidad de Campana",
     "url": "https://main--benevolent-starlight-20a533.netlify.app/",
     "img": "--img: url(247shots_so.jpeg)"
+  },
+  {
+    "name": "Task List",
+    "description": "una simple aplicacion para manejar tareas, para aprender lo basico de javascript, html y css. como manejo de datos, manejo de eventos y manejo de formularios ,manejo de errores manipulacion del dom etc",
+    "url": "https://fluffy-capybara-436ea7.netlify.app/",
+    "img": "--img: url(183shots_so.jpeg)"
   }
 ]}
