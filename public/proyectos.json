@@ -16,5 +16,17 @@
     "description": "una simple aplicacion para manejar tareas, para aprender lo basico de javascript, html y css. como manejo de datos, manejo de eventos y manejo de formularios ,manejo de errores manipulacion del dom etc",
     "url": "https://fluffy-capybara-436ea7.netlify.app/",
     "img": "--img: url(183shots_so.jpeg)"
+  },
+  {
+    "name": "generador de imagenes con ia",
+    "description": "generador de imagenes con IA, para la Hackaton de cloudinary y midudev",
+    "url": "https://generador-de-imagenes-con-ia.vercel.app/",
+    "img": "--img: url(582_1x_shots_so.png)"
+  },
+  {
+    "name": "Portafolio web",
+    "description": "Portafolio web, para un concurso de desarrollo web para el programador y streamer Dot Dager",
+    "url": "https://web-dager.vercel.app/",
+    "img": "--img: url(346shots_so.png)"
   }
 ]}
