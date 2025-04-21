@@ -13,9 +13,9 @@
   },
   {
     "name": "Task List",
-    "description": "una simple aplicacion para manejar tareas, para aprender lo basico de javascript, html y css. como manejo de datos, manejo de eventos y manejo de formularios ,manejo de errores manipulacion del dom etc",
-    "url": "https://fluffy-capybara-436ea7.netlify.app/",
-    "img": "--img: url(183shots_so.jpeg)"
+    "description": "Task List, para la Terminal Hecha con node.js expressy MongoDB",
+    "url": "https://github.com/OmegaTroy/taskList?tab=readme-ov-file",
+    "img": "--img: url(347174829-8e78882c-2856-421c-a736-f5d35007827a.png)"
   },
   {
     "name": "generador de imagenes con ia",
